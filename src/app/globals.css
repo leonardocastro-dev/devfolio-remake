@@ -1,26 +1,223 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  background-color: var(--color-background);
+  font-family: var(--font-fira-code);
 }
+
+.nav-link {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-right: 1px solid var(--border);
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--foreground);
+}
+
+.nav-link.active {
+  color: var(--foreground);
+  border-bottom: 2px solid var(--accent);
+}
+
+.game-container {
+  background-image: linear-gradient(
+    -28deg,
+    rgba(23, 85, 83, 0.7) 0%,
+    rgba(67, 217, 173, 0.091) 100%
+  );
+  border: 1px solid #0c1616;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 0px 0 rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(64px);
+}
+
+/* Make sure the game board has the right background */
+.game-board {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.start-button,
+.skip-button {
+  background-color: var(--accent);
+  color: var(--background);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  text-wrap: nowrap;
+}
+
+.start-button:hover,
+.skip-button:hover {
+  background-color: #ffac6b;
+}
+
+.arrow-key {
+  background-color: var(--background);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  padding: 8px 18px;
+}
+
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --radius: 0.625rem;
+  --background: #011627;
+  --foreground: #ffffff;
+  --card: #011221;
+  --card-foreground: #607b96;
+  --popover: #011627;
+  --popover-foreground: #607b96;
+  --primary: #1c2b3a;
+  --primary-foreground: #ffffff;
+  --secondary: #ffac6b;
+  --secondary-foreground: #011423;
+  --muted: #607b96;
+  --muted-foreground: #607b96;
+  --accent: #fea55f;
+  --accent-foreground: #01080e;
+  --destructive: #ff7b92;
+  --border: #1e2d3d;
+  --input: #011221;
+  --ring: #011221;
+  --chart-1: #4d5bce;
+  --chart-2: #43d9ad;
+  --chart-3: #ffffff;
+  --chart-4: #c98bdf;
+  --chart-5: #e99287;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(67, 217, 172, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(67, 217, 172, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(67, 217, 172, 0);
+  }
+}
+
+@keyframes pulse-destructive {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 123, 146, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(255, 123, 146, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 123, 146, 0);
+  }
+}
+
+@keyframes pulse-blur {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes float-blur {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-5px, 5px);
+  }
+  50% {
+    transform: translate(0, 10px);
+  }
+  75% {
+    transform: translate(5px, 5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes float-blur-reverse {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(5px, -5px);
+  }
+  50% {
+    transform: translate(0, -10px);
+  }
+  75% {
+    transform: translate(-5px, -5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
