@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Fira_Code } from 'next/font/google'
 import './globals.css'
-import Footer from '@/components/footer'
-import Navigation from '@/components/navigation'
+import Footer from '@/components/layout/footer'
+import Navigation from '@/components/layout/navigation'
 
 const firaCode = Fira_Code({
   variable: '--font-fira-code',

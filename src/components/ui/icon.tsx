@@ -1,8 +1,4 @@
-interface IconProps {
-  icon: string
-  currentColor?: string
-  className?: string
-}
+import { IconProps } from './types'
 
 const Icon: React.FC<IconProps> = ({
   icon,

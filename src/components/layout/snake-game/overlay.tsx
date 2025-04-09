@@ -1,4 +1,4 @@
-import { Button } from '../ui/button'
+import { Button } from '../../ui/button'
 import { GRID_SIZE, config } from './constants'
 import { OverlayProps } from './types'
 import { cn } from '@/lib/utils'
