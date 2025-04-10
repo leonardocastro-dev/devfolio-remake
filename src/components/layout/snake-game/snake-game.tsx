@@ -8,9 +8,7 @@ import Icon from '@/components/ui/icon'
 export default function SnakeGame() {
   const { gameState, resetAndStartGame, resetGame } = useSnakeGame()
 
-  const { foodCollected } = gameState
-
-  const { foodCollected: _, ...gameStateForBoard } = gameState
+  const { foodCollected, ...gameStateForBoard } = gameState
 
   return (
     <section className="relative">
