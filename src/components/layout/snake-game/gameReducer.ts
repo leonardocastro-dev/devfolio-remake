@@ -1,7 +1,12 @@
 import { Direction, GameState, GameAction } from './types'
-import { BOARD_WIDTH, BOARD_HEIGHT, TOTAL_FOOD, initialState } from './constants'
+import {
+  BOARD_WIDTH,
+  BOARD_HEIGHT,
+  TOTAL_FOOD,
+  initialState
+} from './constants'
 
-function moveHead(head: { x: number, y: number }, direction: Direction): void {
+function moveHead(head: { x: number; y: number }, direction: Direction): void {
   switch (direction) {
     case Direction.UP:
       head.y -= 1
@@ -18,16 +23,16 @@ function moveHead(head: { x: number, y: number }, direction: Direction): void {
   }
 }
 
-function isOutOfBounds(head: { x: number, y: number }): boolean {
+function isOutOfBounds(head: { x: number; y: number }): boolean {
   return (
-    head.x < 0 ||
-    head.x >= BOARD_WIDTH ||
-    head.y < 0 ||
-    head.y >= BOARD_HEIGHT
+    head.x < 0 || head.x >= BOARD_WIDTH || head.y < 0 || head.y >= BOARD_HEIGHT
   )
 }
 
-function isCollidingWithBody(head: { x: number, y: number }, body: Array<{ x: number, y: number }>): boolean {
+function isCollidingWithBody(
+  head: { x: number; y: number },
+  body: Array<{ x: number; y: number }>
+): boolean {
   for (const segment of body) {
     if (segment.x === head.x && segment.y === head.y) {
       return true

@@ -36,12 +36,38 @@ body {
     float-blur-reverse 18s ease-in-out infinite;
 }
 
+.corner-screw {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 9999px;
+}
+
+.gradient-green {
+  background-image: linear-gradient(to bottom, rgba(22, 76, 81, 0.4) 0%, rgba(22, 76, 81, 0.4) 30%, rgba(13, 58, 64, 0.09) 100%);
+  box-shadow:
+    2px 2px 4px #092d32,
+    inset 0 1px 2px #16645c;
+}
+
+.gradient-purple {
+  background-image: linear-gradient(to bottom, rgba(35, 75, 124, 0.4) 0%, rgba(35, 75, 124, 0.4) 30%, rgba(18, 46, 79, 0.09) 100%);
+  box-shadow:
+    2px 2px 4px #122C4E,
+    inset 0 1px 2px #2C588D;
+}
+
 .nav-link {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  border-right: 1px solid var(--border);
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 16px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 16px;
+  border-left: 1px solid var(--border);
   color: var(--muted);
   transition: color 0.2s;
 }
@@ -52,7 +78,7 @@ body {
 
 .nav-link.active {
   color: var(--foreground);
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 3px solid var(--accent);
 }
 
 .arrow-key {
@@ -215,7 +241,22 @@ body {
     @apply bg-background text-foreground;
     font-weight: var(--font-weight-retina);
   }
-  p, h1, h2, h3, h4, h5, h6, span, button, a, input, textarea, select, option, label, div {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  button,
+  a,
+  input,
+  textarea,
+  select,
+  option,
+  label,
+  div {
     font-weight: var(--font-weight-retina);
   }
 }

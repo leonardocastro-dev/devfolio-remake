@@ -9,10 +9,10 @@ export const GAME_SPEED = 150
 export const TOTAL_FOOD = 10
 
 export const KEY_TO_DIRECTION: Record<string, Direction | undefined> = {
-  'ArrowUp': Direction.UP,
-  'ArrowDown': Direction.DOWN,
-  'ArrowLeft': Direction.LEFT,
-  'ArrowRight': Direction.RIGHT
+  ArrowUp: Direction.UP,
+  ArrowDown: Direction.DOWN,
+  ArrowLeft: Direction.LEFT,
+  ArrowRight: Direction.RIGHT
 }
 
 export const oppositeDirections = {

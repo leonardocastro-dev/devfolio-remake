@@ -2,7 +2,10 @@ import { useEffect, useRef } from 'react'
 import { Direction, UseKeyboardControlsOptions } from '../types'
 import { oppositeDirections, KEY_TO_DIRECTION } from '../constants'
 
-const isValidDirection = (newDir: Direction, currentDir: Direction): boolean => {
+const isValidDirection = (
+  newDir: Direction,
+  currentDir: Direction
+): boolean => {
   return oppositeDirections[newDir] !== currentDir
 }
 

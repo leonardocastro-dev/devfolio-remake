@@ -8,12 +8,8 @@ export function GameControls({ foodCollected, onSkip }: GameControlsProps) {
     <div className="flex flex-col justify-between">
       <div className="flex flex-col gap-5">
         <div className="rounded-lg bg-secondary-foreground/19 px-3 py-4">
-          <p className="text-sm">
-            // use keyboard
-          </p>
-          <p className="text-sm">
-            // arrows to play
-          </p>
+          <p className="text-sm">// use keyboard</p>
+          <p className="text-sm">// arrows to play</p>
 
           <div className="mt-4 grid grid-cols-3 gap-1">
             <div></div>
@@ -33,9 +29,7 @@ export function GameControls({ foodCollected, onSkip }: GameControlsProps) {
           </div>
         </div>
         <div>
-          <p className="text-sm">
-            // food left
-          </p>
+          <p className="text-sm">// food left</p>
           <div className="inline-grid grid-cols-5 gap-2 mt-2">
             {Array.from({ length: TOTAL_FOOD }).map((_, i) => (
               <div
