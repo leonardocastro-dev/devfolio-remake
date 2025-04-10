@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Footer() {
   return (
     <footer className="border-t border-border">
-      <nav className='flex justify-between'>
+      <nav className="flex justify-between">
         <div className="flex">
           <span className="text-muted px-3.5 py-3">find me in:</span>
           <ul className="flex">

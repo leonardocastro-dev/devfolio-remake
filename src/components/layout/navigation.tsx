@@ -3,7 +3,9 @@ import Link from 'next/link'
 export default function Navigation() {
   return (
     <nav className="flex border-b border-border">
-      <span className="flex items-center text-muted px-6 py-4">leonardo-castro</span>
+      <span className="flex items-center text-muted px-6 py-4">
+        leonardo-castro
+      </span>
       <div className="flex justify-center flex-grow">
         <div className="max-w-7xl w-full">
           <ul className="flex">
