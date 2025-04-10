@@ -10,9 +10,9 @@ export default function Home() {
           <p className="text-chart-1 text-3xl">&gt; Full-stack developer</p>
 
           <div className="space-y-2 mt-20">
-            <p className="text-muted">// complete the game to continue</p>
+            <p className="text-muted">{'// complete the game to continue'}</p>
             <p className="text-muted">
-              // you can also see it on my Github page
+              {'// you can also see it on my Github page'}
             </p>
             <p className="font-medium">
               <span className="text-chart-1">const</span>{' '}
