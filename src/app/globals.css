@@ -6,6 +6,59 @@ body {
   font-family: var(--font-fira-code);
 }
 
+.custom-scrollbar::-webkit-scrollbar {
+  width: 26px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--muted);
+  border-radius: 0;
+  border: 4.75px solid transparent;
+  background-clip: content-box;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--border);
+}
+
+.shiki code {
+  font-family: var(--font-fira-code), monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.about-block pre {
+  counter-reset: line;
+  padding-left: 36px; /* espaço pra linha */
+  line-height: 1.6;
+  background: transparent !important; /* garantir fundo transparente */
+}
+
+.about-block pre code > span {
+  display: block;
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+.about-block pre code > span::before {
+  counter-increment: line;
+  content: counter(line);
+  position: absolute;
+  left: -2rem;
+  width: 1.5rem;
+  text-align: right;
+  color: var(--muted); /* text-muted */
+  font-size: 0.875rem;
+}
+
 .blur-effect-1 {
   position: absolute;
   pointer-events: none;
@@ -86,11 +139,6 @@ body {
   color: var(--foreground);
 }
 
-.nav-link.active {
-  color: var(--foreground);
-  border-bottom: 3px solid var(--accent);
-}
-
 .arrow-key {
   background-color: var(--background);
   color: var(--primary);
@@ -100,6 +148,10 @@ body {
   border-radius: 8px;
   border: 1px solid var(--border);
   padding: 8px 18px;
+}
+
+.sidebar-section:last-child .border-b {
+  border-bottom: none;
 }
 
 @keyframes pulse {

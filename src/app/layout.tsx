@@ -22,10 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${firaCode.variable} antialiased min-h-screen flex flex-col`}
+        className={`${firaCode.variable} antialiased h-screen flex flex-col`}
       >
         <Navigation />
-        {children}
+        <main className="flex-1 overflow-hidden">{children}</main>
         <Footer />
       </body>
     </html>

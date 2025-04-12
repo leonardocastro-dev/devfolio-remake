@@ -41,7 +41,6 @@ export interface GameBoardProps {
 
 export interface GameControlsProps {
   foodCollected: number
-  onSkip: () => void
 }
 
 export type UseKeyboardControlsOptions = {

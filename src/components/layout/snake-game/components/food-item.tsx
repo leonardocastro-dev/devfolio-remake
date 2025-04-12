@@ -1,5 +1,5 @@
-import { GRID_SIZE } from './constants'
-import { FoodProps } from './types'
+import { GRID_SIZE } from '../constants'
+import { FoodProps } from '../types'
 
 export function FoodItem({ x, y, gameOver }: FoodProps) {
   return (

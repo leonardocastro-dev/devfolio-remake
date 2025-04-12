@@ -1,5 +1,5 @@
 import React from 'react'
-import { Direction, SnakeProps } from './types'
+import { Direction, SnakeProps } from '../types'
 
 export default function Snake({
   snake,

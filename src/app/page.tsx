@@ -2,7 +2,7 @@ import SnakeGame from '@/components/layout/snake-game/snake-game'
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center flex-1 overflow-x-hidden px-8">
+    <div className="flex flex-col justify-center items-center overflow-x-hidden px-8 h-full">
       <div className="flex max-w-7xl w-full items-center justify-between flex-grow gap-8">
         <header className="flex flex-col justify-center">
           <p className="text-lg text-foreground mb-2">Hello everyone. I am</p>
@@ -34,6 +34,6 @@ export default function Home() {
         </header>
         <SnakeGame />
       </div>
-    </main>
+    </div>
   )
 }

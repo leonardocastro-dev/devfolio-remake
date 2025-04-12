@@ -38,14 +38,8 @@ export function useSnakeGame() {
     dispatch({ type: 'START_GAME' })
   }
 
-  const resetGame = () => {
-    keyboardControls.reset()
-    dispatch({ type: 'RESET_GAME' })
-  }
-
   return {
     gameState,
-    resetAndStartGame,
-    resetGame
+    resetAndStartGame
   }
 }

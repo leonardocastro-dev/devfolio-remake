@@ -1,9 +1,9 @@
 import Snake from './snake'
 
-import { BOARD_WIDTH, BOARD_HEIGHT, GRID_SIZE } from './constants'
+import { BOARD_WIDTH, BOARD_HEIGHT, GRID_SIZE } from '../constants'
 import { FoodItem } from './food-item'
 import { Overlay } from './overlay'
-import { GameBoardProps } from './types'
+import { GameBoardProps } from '../types'
 
 export function GameBoard({
   snake,

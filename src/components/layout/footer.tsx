@@ -14,6 +14,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border-r border-l px-3.5 py-3 flex group"
+                aria-label="LinkedIn of Leonardo Castro"
               >
                 <Icon
                   icon="linkedin"
@@ -29,6 +30,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
           className="text-muted border-l px-3.5 py-3 flex hover:text-white gap-2 group transition-colors duration-200"
+          aria-label="GitHub of Leonardo Castro"
         >
           @leonardocastro-dev
           <Icon
