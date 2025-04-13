@@ -30,33 +30,39 @@ body {
 .shiki code {
   font-family: var(--font-fira-code), monospace;
   font-size: 0.9rem;
-  line-height: 1.5;
   white-space: pre-wrap;
   word-break: break-word;
 }
 
 .about-block pre {
   counter-reset: line;
-  padding-left: 36px; /* espaço pra linha */
-  line-height: 1.6;
+  padding-left: 0.5rem; /* espaço pra linha */
   background: transparent !important; /* garantir fundo transparente */
 }
 
 .about-block pre code > span {
   display: block;
   position: relative;
-  padding-left: 0.5rem;
+  padding-left: 40px;
+  margin-bottom: -22px;
 }
 
 .about-block pre code > span::before {
   counter-increment: line;
   content: counter(line);
   position: absolute;
-  left: -2rem;
-  width: 1.5rem;
+  left: -0.5rem;
   text-align: right;
   color: var(--muted); /* text-muted */
   font-size: 0.875rem;
+}
+
+.about-block pre code span span {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  word-spacing: 0;
+  letter-spacing: normal;
 }
 
 .blur-effect-1 {
