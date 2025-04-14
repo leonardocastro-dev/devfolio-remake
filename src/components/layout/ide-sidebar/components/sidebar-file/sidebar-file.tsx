@@ -1,34 +1,9 @@
 'use client'
 
 import React, { useState } from 'react'
-import Link from 'next/link'
 import Icon from '@/components/ui/icon'
-
-// Tipos
-type FileType = 'file' | 'folder'
-
-interface BaseItem {
-  type: FileType
-  name: string
-}
-
-interface FileItem extends BaseItem {
-  type: 'file'
-  path: string
-}
-
-interface FolderItem extends BaseItem {
-  type: 'folder'
-  color?: string
-  children: SidebarItem[]
-}
-
-export type SidebarItem = FileItem | FolderItem
-
-interface SidebarFileProps {
-  schema: SidebarItem
-  paddingLeft?: number
-}
+import { useTabsStore } from './store'
+import { SidebarFileProps, FileItem, FolderItem } from './types'
 
 const SidebarFile: React.FC<SidebarFileProps> = ({
   schema,
@@ -36,34 +11,45 @@ const SidebarFile: React.FC<SidebarFileProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(true)
   const isFolder = schema.type === 'folder'
+  const { addTab, activeTabId } = useTabsStore()
 
   const handleToggle = () => isFolder && setIsOpen(!isOpen)
 
-  const renderFile = (file: FileItem) => (
-    <div
-      className="flex items-center hover:bg-gray-800 pr-3.5 py-2.5 cursor-pointer group"
-      style={{ paddingLeft }}
-    >
-      <span className="mr-2">
-        <Icon
-          icon="markdown"
-          currentColor="var(--muted)"
-          className="group-hover:fill-white"
-        />
-      </span>
-      <Link
-        href={file.path}
-        className="text-sm text-muted group-hover:text-white"
+  const handleFileClick = (file: FileItem) => {
+    addTab({
+      name: file.name
+    })
+  }
+
+  const renderFile = (file: FileItem) => {
+    const isActive = activeTabId === file.name
+
+    return (
+      <div
+        className="flex items-center hover:bg-muted/5 pr-3.5 py-2.5 cursor-pointer group"
+        style={{ paddingLeft }}
+        onClick={() => handleFileClick(file)}
       >
-        {file.name}
-      </Link>
-    </div>
-  )
+        <span className="mr-2">
+          <Icon
+            icon="markdown"
+            currentColor="var(--muted)"
+            className={`${isActive ? 'fill-white' : 'group-hover:fill-white'}`}
+          />
+        </span>
+        <span
+          className={`text-sm ${isActive ? 'text-white' : 'text-muted group-hover:text-white'}`}
+        >
+          {file.name}
+        </span>
+      </div>
+    )
+  }
 
   const renderFolder = (folder: FolderItem) => (
     <div>
       <div
-        className="flex items-center hover:bg-gray-800 px-3.5 py-2.5 cursor-pointer group"
+        className="flex items-center hover:bg-muted/5 px-3.5 py-2.5 cursor-pointer group"
         onClick={handleToggle}
       >
         <span className="mr-3">

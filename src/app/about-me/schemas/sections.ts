@@ -1,5 +1,5 @@
 const sections = {
-  bio: `/**
+  intro: `/**
  * Hey! I'm Leonardo, a full stack developer passionate about turning ideas
  * into smart, well-crafted solutions.
  *
@@ -11,8 +11,14 @@ const sections = {
  *
  * I'm always exploring new tools and challenges, and yeah,
  * coffee definitely helps keep the ideas flowing!
+ */`,
+  personality: `/**
+ * I'm a very friendly and approachable person.
+ * I'm always willing to help and support my friends and family.
+ * I'm a very positive person and I always see the bright side of things.
+ * I'm a very optimistic person and I always see the bright side of things.
+ *
  */`
 }
-
 
 export default sections

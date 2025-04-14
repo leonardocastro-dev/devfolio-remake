@@ -23,7 +23,7 @@ const SidebarSection: React.FC<SidebarSectionProps> = ({
   return (
     <div className="sidebar-section">
       <div
-        className="flex items-center hover:bg-gray-800 px-3.5 py-2.5 cursor-pointer border-b border-border"
+        className="flex items-center hover:bg-muted/5 px-3.5 py-2.5 cursor-pointer border-b border-border"
         onClick={toggleOpen}
       >
         <span className="mr-3">

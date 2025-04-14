@@ -1,4 +1,4 @@
-import { SidebarItem } from '@/components/layout/ide-sidebar/components/sidebar-file'
+import { SidebarItem } from "@/components/layout/ide-sidebar/components/sidebar-file/types";
 
 export const personalInfoFiles: SidebarItem[] = [
   {
@@ -8,25 +8,21 @@ export const personalInfoFiles: SidebarItem[] = [
     children: [
       {
         type: 'file',
-        name: 'intro',
-        path: '/about-me/bio#intro'
+        name: 'intro'
       },
       {
         type: 'file',
-        name: 'personality',
-        path: '/about-me/bio#personality'
+        name: 'personality'
       },
       {
         type: 'file',
-        name: 'background',
-        path: '/about-me/bio#background'
+        name: 'background'
       }
     ]
   },
   {
     type: 'file',
-    name: 'interests',
-    path: '/about-me#interests'
+    name: 'interests'
   },
   {
     type: 'folder',
@@ -35,13 +31,11 @@ export const personalInfoFiles: SidebarItem[] = [
     children: [
       {
         type: 'file',
-        name: 'harvard',
-        path: '/about-me/education#harvard'
+        name: 'harvard'
       },
       {
         type: 'file',
-        name: 'ebac',
-        path: '/about-me/education#ebac'
+        name: 'ebac'
       }
     ]
   }
