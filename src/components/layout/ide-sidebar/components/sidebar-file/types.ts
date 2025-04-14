@@ -1,8 +1,4 @@
-export interface Tab {
-  id: string
-  name: string
-  content?: string
-}
+import { Tab } from '@/components/layout/types'
 
 export interface TabsState {
   tabs: Tab[]

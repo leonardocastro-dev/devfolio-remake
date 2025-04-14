@@ -1,5 +1,6 @@
 import { create } from 'zustand'
-import { Tab, TabsState } from './types'
+import { TabsState } from './types'
+import { Tab } from '@/components/layout/types'
 
 const defaultTab: Tab = {
   id: 'intro',

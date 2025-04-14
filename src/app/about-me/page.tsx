@@ -8,7 +8,7 @@ import SidebarSection from '@/components/layout/ide-sidebar/components/sidebar-s
 import SidebarFile from '@/components/layout/ide-sidebar/components/sidebar-file/sidebar-file'
 import { personalInfoFiles } from './constants'
 import { useTabsStore } from '@/components/layout/ide-sidebar/components/sidebar-file/store'
-import Tabs from '@/components/layout/tabs'
+import Tabs from '@/components/layout/tabs/tabs'
 
 export default function AboutMe() {
   const { tabs, activeTabId, removeTab, setActiveTab } = useTabsStore()
