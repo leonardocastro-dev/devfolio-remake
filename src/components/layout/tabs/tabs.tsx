@@ -6,7 +6,12 @@ import { TAB_CLASSES } from './constants'
 import { useTabsHandlers } from './hooks/useTabsHandlers'
 import { TabsProps } from './types'
 
-export default function Tabs({ tabs, activeTabId, setActiveTab, removeTab }: TabsProps) {
+export default function Tabs({
+  tabs,
+  activeTabId,
+  setActiveTab,
+  removeTab
+}: TabsProps) {
   const { reorderTabs } = useTabsStore()
   const {
     handleDragStart,
@@ -24,9 +29,11 @@ export default function Tabs({ tabs, activeTabId, setActiveTab, removeTab }: Tab
         <div
           key={tab.id}
           className={cn(
-            "flex gap-12 items-center px-4 py-2 border-r border-border cursor-pointer",
-            activeTabId === tab.id ? `${TAB_CLASSES.ACTIVE.BG} ${TAB_CLASSES.ACTIVE.TEXT}` : TAB_CLASSES.INACTIVE.TEXT,
-            "[&.tab-dragging>*]:invisible"
+            'flex gap-12 items-center px-4 py-2 border-r border-border cursor-pointer',
+            activeTabId === tab.id
+              ? `${TAB_CLASSES.ACTIVE.BG} ${TAB_CLASSES.ACTIVE.TEXT}`
+              : TAB_CLASSES.INACTIVE.TEXT,
+            '[&.tab-dragging>*]:invisible'
           )}
           onClick={() => setActiveTab(tab.id)}
           draggable
@@ -46,7 +53,11 @@ export default function Tabs({ tabs, activeTabId, setActiveTab, removeTab }: Tab
           >
             <Icon
               icon="close"
-              className={activeTabId === tab.id ? TAB_CLASSES.ACTIVE.ICON : TAB_CLASSES.INACTIVE.ICON}
+              className={
+                activeTabId === tab.id
+                  ? TAB_CLASSES.ACTIVE.ICON
+                  : TAB_CLASSES.INACTIVE.ICON
+              }
             />
           </button>
         </div>
