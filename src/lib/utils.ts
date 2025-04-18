@@ -11,16 +11,40 @@ let highlighterPromise: Promise<Highlighter> | null = null
 const customTheme = {
   name: 'custom-theme',
   type: 'dark' as const,
-  fg: '#ffffff',
+  fg: '#607b96',
   bg: '#00000000',
   settings: [
-    { scope: ['storage'], settings: { foreground: '#4d5bce' } },
-    { scope: ['variable'], settings: { foreground: '#43d9ad' } },
-    { scope: ['string'], settings: { foreground: '#e99287' } },
-    { scope: ['number'], settings: { foreground: '#e99287' } },
-    { scope: ['entity.name.type'], settings: { foreground: '#fea55f' } },
-    { scope: ['entity.name.function'], settings: { foreground: '#c98bdf' } },
-    { scope: ['punctuation', 'operator'], settings: { foreground: '#e99287' } }
+    {
+      scope: ['keyword', 'storage'],
+      settings: { foreground: '#e99287' }
+    },
+    {
+      scope: ['entity.name.type'],
+      settings: { foreground: '#43d9ad' }
+    },
+    {
+      scope: ['support.type', 'support.class', 'entity.name.class'],
+      settings: { foreground: '#fea55f' }
+    },
+    {
+      scope: ['keyword.operator', 'punctuation.definition.typeparameters'],
+      settings: { foreground: '#4d5bce' }
+    },
+    {
+      scope: ['string', 'constant.numeric'],
+      settings: { foreground: '#e99287' }
+    },
+    {
+      scope: [
+        'variable.other.constant.object',
+        'meta.function-call'
+      ],
+      settings: { foreground: '#c98bdf' }
+    },
+    {
+      scope: ['variable', 'meta.function'],
+      settings: { foreground: '#607b96' }
+    }
   ],
   colors: {
     'editor.background': '#00000000'
