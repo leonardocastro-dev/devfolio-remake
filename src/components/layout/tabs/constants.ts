@@ -10,7 +10,8 @@ export const TAB_CLASSES = {
     ICON: 'fill-muted'
   },
   DRAG_IMAGE: {
-    BG: 'bg-transparent',
+    BG: 'bg-gray-800',
+    RADIUS: 'rounded-sm',
     TEXT: 'text-white',
     ICON: 'fill-white'
   },

@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useEffect } from 'react'
 import { highlightCode } from '@/lib/utils'
 import type { Gist } from '../types'

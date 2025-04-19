@@ -1,3 +1,5 @@
+'use client'
+
 import { useRef, useCallback } from 'react'
 import { TAB_CLASSES, DRAG_IMAGE_POSITION } from '../constants'
 import { createDragImage } from '../utils'

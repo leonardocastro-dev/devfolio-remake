@@ -10,7 +10,11 @@ export function createDragImage(el: HTMLElement) {
     TAB_CLASSES.BORDER
   )
 
-  clone.classList.add(TAB_CLASSES.DRAG_IMAGE.TEXT, TAB_CLASSES.DRAG_IMAGE.BG)
+  clone.classList.add(
+    TAB_CLASSES.DRAG_IMAGE.TEXT,
+    TAB_CLASSES.DRAG_IMAGE.BG,
+    TAB_CLASSES.DRAG_IMAGE.RADIUS
+  )
 
   const icon = clone.querySelector('path')
   if (icon) {
