@@ -4,7 +4,11 @@ import { useEffect, useState } from 'react'
 import { highlightCode } from '@/lib/utils'
 import sections from '../schemas/sections'
 
-export default function MarkdownViewer({ activeTabId }: { activeTabId: string | null }) {
+export default function MarkdownViewer({
+  activeTabId
+}: {
+  activeTabId: string | null
+}) {
   const [codeMd, setCodeMd] = useState('')
 
   useEffect(() => {

@@ -59,7 +59,10 @@ export default function GistViewer() {
                 <div className="flex items-center mb-3">
                   <div className="w-9 h-9 rounded-full overflow-hidden mr-2.5">
                     <img
-                      src={gist.owner.avatar_url || 'https://github.com/identicons/app/icon_hash.png'}
+                      src={
+                        gist.owner.avatar_url ||
+                        'https://github.com/identicons/app/icon_hash.png'
+                      }
                       alt={`${gist.owner.login || 'User'} avatar`}
                       className="w-full h-full object-cover"
                     />
@@ -74,7 +77,10 @@ export default function GistViewer() {
 
                 <div className="space-y-7">
                   {Object.values(gist.files).map((file) => (
-                    <div key={file.filename} className="bg-card border border-border rounded-2xl overflow-hidden px-7 py-6">
+                    <div
+                      key={file.filename}
+                      className="bg-card border border-border rounded-2xl overflow-hidden px-7 py-6"
+                    >
                       <div
                         dangerouslySetInnerHTML={{
                           __html: file.content || 'Loading...'

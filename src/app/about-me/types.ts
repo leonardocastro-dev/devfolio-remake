@@ -4,8 +4,11 @@ export type Gist = {
     avatar_url: string
   }
   created_at: string
-  files: Record<string, {
-    filename: string
-    content: string
-  }>
+  files: Record<
+    string,
+    {
+      filename: string
+      content: string
+    }
+  >
 }

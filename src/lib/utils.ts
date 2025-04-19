@@ -35,10 +35,7 @@ const customTheme = {
       settings: { foreground: '#e99287' }
     },
     {
-      scope: [
-        'variable.other.constant.object',
-        'meta.function-call'
-      ],
+      scope: ['variable.other.constant.object', 'meta.function-call'],
       settings: { foreground: '#c98bdf' }
     },
     {
