@@ -5,20 +5,20 @@ import { highlightCode } from '@/lib/utils'
 import sections from '../schemas/sections'
 
 export default function MarkdownViewer({
-  activeTabId
+  selectedTab
 }: {
-  activeTabId: string | null
+  selectedTab: string | null
 }) {
   const [codeMd, setCodeMd] = useState('')
 
   useEffect(() => {
     const loadCode = async () => {
-      if (!activeTabId) {
+      if (!selectedTab) {
         setCodeMd('')
         return
       }
 
-      const sectionKey = activeTabId as keyof typeof sections
+      const sectionKey = selectedTab as keyof typeof sections
       const sectionContent = sections[sectionKey]
 
       if (sectionContent) {
@@ -30,7 +30,7 @@ export default function MarkdownViewer({
     }
 
     loadCode()
-  }, [activeTabId])
+  }, [selectedTab])
 
   return (
     <div className="py-4 px-9 overflow-y-auto custom-scrollbar max-h-full">

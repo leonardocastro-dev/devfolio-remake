@@ -1,67 +1,51 @@
-import { cn } from '@/lib/utils'
 import Icon from '@/components/ui/icon'
 import { Tab } from '@/components/layout/types'
-import { useTabsStore } from '@/components/layout/ide-sidebar/components/sidebar-file/store'
-import { TAB_CLASSES } from './constants'
-import { useTabsHandlers } from './hooks/useTabsHandlers'
-import { TabsProps } from './types'
+import { motion, Reorder } from 'framer-motion'
 
-export default function Tabs({
-  tabs,
-  activeTabId,
-  setActiveTab,
-  removeTab
-}: TabsProps) {
-  const { reorderTabs } = useTabsStore()
-  const {
-    handleDragStart,
-    handleDragOver,
-    handleDragEnter,
-    handleDrop,
-    handleDragEnd
-  } = useTabsHandlers({ tabs, setActiveTab, reorderTabs })
+interface TabProps {
+  tab: Tab
+  isSelected: boolean
+  onClick: () => void
+  onRemove: () => void
+}
 
-  if (tabs.length === 0) return null
-
+export default function TabItem({
+  tab,
+  isSelected,
+  onClick,
+  onRemove
+}: TabProps) {
   return (
-    <div className="flex border-b border-border">
-      {tabs.map((tab: Tab, index) => (
-        <div
-          key={tab.id}
-          className={cn(
-            'flex gap-12 items-center px-4 py-2 border-r border-border cursor-pointer',
-            activeTabId === tab.id
-              ? `${TAB_CLASSES.ACTIVE.BG} ${TAB_CLASSES.ACTIVE.TEXT}`
-              : TAB_CLASSES.INACTIVE.TEXT,
-            '[&.tab-dragging>*]:invisible'
-          )}
-          onClick={() => setActiveTab(tab.id)}
-          draggable
-          onDragStart={(e) => handleDragStart(e, index)}
-          onDragOver={handleDragOver}
-          onDragEnter={(e) => handleDragEnter(e, index)}
-          onDrop={handleDrop}
-          onDragEnd={handleDragEnd}
-        >
-          <span className="pointer-events-none">{tab.name}</span>
-          <button
-            className="text-xs pointer-events-auto"
-            onClick={(e) => {
-              e.stopPropagation()
-              removeTab(tab.id)
-            }}
-          >
-            <Icon
-              icon="close"
-              className={
-                activeTabId === tab.id
-                  ? TAB_CLASSES.ACTIVE.ICON
-                  : TAB_CLASSES.INACTIVE.ICON
-              }
-            />
-          </button>
-        </div>
-      ))}
-    </div>
+    <Reorder.Item
+      value={tab}
+      id={tab.id}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{
+        opacity: 1,
+        backgroundColor: isSelected ? 'rgba(96, 123, 150, 0.1)' : 'transparent',
+        color: isSelected ? '#fff' : '#607b96',
+        y: 0,
+        transition: { duration: 0.15 }
+      }}
+      exit={{ opacity: 0, y: 20, transition: { duration: 0.3 } }}
+      whileDrag={{ backgroundColor: 'red' }}
+      className="flex gap-12 items-center px-4 py-2 border-r border-border cursor-pointer min-w-[100px] flex-shrink-0"
+      onPointerDown={onClick}
+    >
+      <motion.span className="pointer-events-none">{tab.name}</motion.span>
+      <motion.button
+        className="text-xs pointer-events-auto"
+        initial={false}
+        onClick={(e) => {
+          e.stopPropagation()
+          onRemove()
+        }}
+      >
+        <Icon
+          icon="close"
+          className={isSelected ? 'fill-white' : 'fill-muted'}
+        />
+      </motion.button>
+    </Reorder.Item>
   )
 }

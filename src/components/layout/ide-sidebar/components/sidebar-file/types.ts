@@ -2,12 +2,12 @@ import { Tab } from '@/components/layout/types'
 
 export interface TabsState {
   tabs: Tab[]
-  activeTabId: string | null
+  selectedTab: string | null
   addTab: (tab: Omit<Tab, 'id'>) => void
   removeTab: (id: string) => void
   setActiveTab: (id: string) => void
   isTabOpen: (name: string) => boolean
-  reorderTabs: (dragIndex: number, dropIndex: number) => void
+  setTabs: (tabs: Tab[]) => void
 }
 
 export type FileItem = {

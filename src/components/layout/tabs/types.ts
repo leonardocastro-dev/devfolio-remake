@@ -6,7 +6,7 @@ interface TabsBaseProps {
 }
 
 export interface TabsProps extends TabsBaseProps {
-  activeTabId: string | null
+  selectedTab: string | null
   removeTab: (id: string) => void
 }
 

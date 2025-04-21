@@ -11,7 +11,7 @@ const SidebarFile: React.FC<SidebarFileProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(true)
   const isFolder = schema.type === 'folder'
-  const { addTab, activeTabId } = useTabsStore()
+  const { addTab, selectedTab } = useTabsStore()
 
   const handleToggle = () => isFolder && setIsOpen(!isOpen)
 
@@ -22,7 +22,7 @@ const SidebarFile: React.FC<SidebarFileProps> = ({
   }
 
   const renderFile = (file: FileItem) => {
-    const isActive = activeTabId === file.name
+    const isActive = selectedTab === file.name
 
     return (
       <div
