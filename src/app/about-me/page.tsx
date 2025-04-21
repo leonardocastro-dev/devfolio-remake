@@ -12,7 +12,8 @@ import MarkdownViewer from './components/markdown-viewer'
 import { AnimatePresence, Reorder } from 'framer-motion'
 
 export default function AboutMe() {
-  const { tabs, selectedTab, removeTab, setActiveTab, setTabs } = useTabsStore()
+  const { tabs, selectedTab, removeTab, setSelectedTab, setTabs } =
+    useTabsStore()
 
   return (
     <main className="flex h-full">
@@ -30,13 +31,13 @@ export default function AboutMe() {
       </IdeSidebar>
 
       <div className="w-full flex flex-col h-full">
-        {tabs.length > 0 && (
+        <nav className="overflow-hidden min-h-10 relative border-b border-border">
           <Reorder.Group
             as="ul"
             axis="x"
             values={tabs}
             onReorder={setTabs}
-            className="flex border-b border-border"
+            className="flex"
           >
             <AnimatePresence initial={false}>
               {tabs.map((tab) => (
@@ -44,13 +45,13 @@ export default function AboutMe() {
                   key={tab.id}
                   tab={tab}
                   isSelected={selectedTab === tab.id}
-                  onClick={() => setActiveTab(tab.id)}
+                  onClick={() => setSelectedTab(tab.id)}
                   onRemove={() => removeTab(tab.id)}
                 />
               ))}
             </AnimatePresence>
           </Reorder.Group>
-        )}
+        </nav>
 
         <div className="grid grid-cols-2 h-full overflow-hidden">
           <MarkdownViewer selectedTab={selectedTab} />

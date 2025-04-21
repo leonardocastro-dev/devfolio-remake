@@ -22,19 +22,22 @@ export default function TabItem({
       initial={{ opacity: 0, y: 30 }}
       animate={{
         opacity: 1,
-        backgroundColor: isSelected ? 'rgba(96, 123, 150, 0.1)' : 'transparent',
+        backgroundColor: isSelected ? '#081C2D' : 'transparent',
         color: isSelected ? '#fff' : '#607b96',
         y: 0,
         transition: { duration: 0.15 }
       }}
       exit={{ opacity: 0, y: 20, transition: { duration: 0.3 } }}
-      whileDrag={{ backgroundColor: 'red' }}
-      className="flex gap-12 items-center px-4 py-2 border-r border-border cursor-pointer min-w-[100px] flex-shrink-0"
+      whileDrag={{ backgroundColor: '#1e2d3d' }}
+      className="flex gap-12 items-center px-3 py-2 border-r border-border cursor-pointer min-w-[100px] flex-shrink-0"
       onPointerDown={onClick}
     >
-      <motion.span className="pointer-events-none">{tab.name}</motion.span>
+      <motion.span layout="position" className="pointer-events-none">
+        {tab.name}
+      </motion.span>
       <motion.button
-        className="text-xs pointer-events-auto"
+        layout
+        className="flex cursor-pointer items-center justify-center h-5 w-5 hover:bg-border rounded-sm transition-colors duration-300"
         initial={false}
         onClick={(e) => {
           e.stopPropagation()

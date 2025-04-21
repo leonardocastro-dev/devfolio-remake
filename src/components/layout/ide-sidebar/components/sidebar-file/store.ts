@@ -35,9 +35,7 @@ export const useTabsStore = create<TabsState>((set, get) => ({
     })
   },
 
-  setActiveTab: (id) => set({ selectedTab: id }),
-
-  isTabOpen: (name) => get().tabs.some((t) => t.name === name),
+  setSelectedTab: (id) => set({ selectedTab: id }),
 
   setTabs: (tabs: Tab[]) => set({ tabs })
 }))

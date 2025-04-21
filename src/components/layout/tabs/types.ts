@@ -2,7 +2,7 @@ import { Tab } from '../types'
 
 interface TabsBaseProps {
   tabs: Tab[]
-  setActiveTab: (id: string) => void
+  setSelectedTab: (id: string) => void
 }
 
 export interface TabsProps extends TabsBaseProps {

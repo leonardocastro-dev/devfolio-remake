@@ -5,8 +5,7 @@ export interface TabsState {
   selectedTab: string | null
   addTab: (tab: Omit<Tab, 'id'>) => void
   removeTab: (id: string) => void
-  setActiveTab: (id: string) => void
-  isTabOpen: (name: string) => boolean
+  setSelectedTab: (id: string) => void
   setTabs: (tabs: Tab[]) => void
 }
 
