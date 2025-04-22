@@ -16,6 +16,11 @@ export type FileItem = {
   name: string
 }
 
+export interface FileItemProps {
+  file: FileItem
+  depth: number
+}
+
 export type FolderItem = {
   type: 'folder'
   name: string
@@ -23,7 +28,12 @@ export type FolderItem = {
   children: SidebarItem[]
 }
 
+export interface FolderItemProps {
+  folder: FolderItem
+  depth: number
+}
+
 export interface SidebarFileProps {
   schema: SidebarItem
-  paddingLeft?: number
+  depth?: number
 }

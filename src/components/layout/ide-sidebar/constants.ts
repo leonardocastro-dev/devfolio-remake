@@ -29,3 +29,6 @@ export const childVariant = {
     }
   }
 }
+
+export const BASE_PADDING = 14
+export const LEVEL_PADDING = 25

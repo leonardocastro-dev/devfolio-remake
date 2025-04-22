@@ -2,7 +2,7 @@
 
 import IdeSidebar from '@/components/layout/ide-sidebar/ide-sidebar'
 import SidebarSection from '@/components/layout/ide-sidebar/components/sidebar-section'
-import SidebarFile from '@/components/layout/ide-sidebar/components/sidebar-file'
+import SidebarExplorer from '@/components/layout/ide-sidebar/components/sidebar-explorer'
 import TabItem from '@/components/layout/tabs/tabs'
 import { personalInfoFiles } from './constants'
 import { useTabsStore } from '@/components/layout/tabs/store'
@@ -21,7 +21,7 @@ export default function AboutMe() {
         <>
           <SidebarSection label="personal-info">
             {personalInfoFiles.map((file, i) => (
-              <SidebarFile key={`personal-info-${i}`} schema={file} />
+              <SidebarExplorer key={`personal-info-${i}`} schema={file} />
             ))}
           </SidebarSection>
           <SidebarSection label="contacts">

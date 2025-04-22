@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { TabsState } from '../ide-sidebar/components/sidebar-file/types'
+import { TabsState } from '../ide-sidebar/types'
 import { Tab } from '@/components/layout/types'
 
 const defaultTab: Tab = {

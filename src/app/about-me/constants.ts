@@ -1,4 +1,4 @@
-import { SidebarItem } from '@/components/layout/ide-sidebar/components/sidebar-file/types'
+import { SidebarItem } from '@/components/layout/ide-sidebar/types'
 
 export const personalInfoFiles: SidebarItem[] = [
   {
