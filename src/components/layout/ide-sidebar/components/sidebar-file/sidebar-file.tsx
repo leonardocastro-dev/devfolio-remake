@@ -4,6 +4,8 @@ import React, { useState } from 'react'
 import Icon from '@/components/ui/icon'
 import { useTabsStore } from './store'
 import { SidebarFileProps, FileItem, FolderItem } from './types'
+import { motion, AnimatePresence } from 'framer-motion'
+import { collapseVariants, childVariant } from '../constants'
 
 const SidebarFile: React.FC<SidebarFileProps> = ({
   schema,
@@ -16,17 +18,16 @@ const SidebarFile: React.FC<SidebarFileProps> = ({
   const handleToggle = () => isFolder && setIsOpen(!isOpen)
 
   const handleFileClick = (file: FileItem) => {
-    addTab({
-      name: file.name
-    })
+    addTab({ name: file.name })
   }
 
   const renderFile = (file: FileItem) => {
     const isActive = selectedTab === file.name
 
     return (
-      <div
-        className="flex items-center hover:bg-muted/5 pr-3.5 py-2.5 cursor-pointer group"
+      <motion.div
+        variants={childVariant}
+        className="flex items-center hover:bg-[#061B2D] pr-3.5 py-2.5 cursor-pointer group"
         style={{ paddingLeft }}
         onClick={() => handleFileClick(file)}
       >
@@ -42,14 +43,14 @@ const SidebarFile: React.FC<SidebarFileProps> = ({
         >
           {file.name}
         </span>
-      </div>
+      </motion.div>
     )
   }
 
   const renderFolder = (folder: FolderItem) => (
     <div>
       <div
-        className="flex items-center hover:bg-muted/5 px-3.5 py-2.5 cursor-pointer group"
+        className="flex items-center hover:bg-[#061B2D] px-3.5 py-2.5 cursor-pointer group"
         onClick={handleToggle}
       >
         <span className="mr-3">
@@ -69,14 +70,25 @@ const SidebarFile: React.FC<SidebarFileProps> = ({
         </span>
       </div>
 
-      {isOpen &&
-        folder.children?.map((child, index) => (
-          <SidebarFile
-            key={`${child.name}-${index}`}
-            schema={child}
-            paddingLeft={paddingLeft + 25}
-          />
-        ))}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            key={folder.name}
+            variants={collapseVariants}
+            initial="closed"
+            animate="open"
+            exit="closed"
+          >
+            {folder.children?.map((child, i) => (
+              <SidebarFile
+                key={`${child.name}-${i}`}
+                schema={child}
+                paddingLeft={paddingLeft + 25}
+              />
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 

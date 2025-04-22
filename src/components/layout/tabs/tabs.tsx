@@ -22,13 +22,14 @@ export default function TabItem({
       initial={{ opacity: 0, y: 30 }}
       animate={{
         opacity: 1,
-        backgroundColor: isSelected ? '#081C2D' : 'transparent',
+        backgroundColor: isSelected ? '#061B2D' : 'transparent',
         color: isSelected ? '#fff' : '#607b96',
         y: 0,
         transition: { duration: 0.15 }
       }}
       exit={{ opacity: 0, y: 20, transition: { duration: 0.3 } }}
       whileDrag={{ backgroundColor: '#1e2d3d' }}
+      whileHover={{ backgroundColor: '#081C2D' }}
       className="flex gap-12 items-center px-3 py-2 border-r border-border cursor-pointer min-w-[100px] flex-shrink-0"
       onPointerDown={onClick}
     >

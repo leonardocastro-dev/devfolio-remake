@@ -1,7 +1,9 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Icon from '@/components/ui/icon'
+import { motion, AnimatePresence } from 'framer-motion'
+import { collapseVariants, childVariant } from './constants'
 
 interface SidebarSectionProps {
   label: string
@@ -15,6 +17,15 @@ const SidebarSection: React.FC<SidebarSectionProps> = ({
   children
 }) => {
   const [isOpen, setIsOpen] = useState(initialIsOpen)
+  const [showSection, setShowSection] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSection(true)
+    }, 100)
+
+    return () => clearTimeout(timer)
+  }, [])
 
   const toggleOpen = () => {
     setIsOpen(!isOpen)
@@ -23,7 +34,7 @@ const SidebarSection: React.FC<SidebarSectionProps> = ({
   return (
     <div className="sidebar-section">
       <div
-        className="flex items-center min-h-10 hover:bg-muted/5 px-3.5 cursor-pointer border-b border-border"
+        className="flex items-center min-h-10 hover:bg-[#061B2D] px-3.5 cursor-pointer border-b border-border"
         onClick={toggleOpen}
       >
         <span className="mr-3">
@@ -35,8 +46,24 @@ const SidebarSection: React.FC<SidebarSectionProps> = ({
         </span>
         <span className="text-sm text-white">{label}</span>
       </div>
-
-      {isOpen && <div className="border-b border-border">{children}</div>}
+      <AnimatePresence>
+        {isOpen && showSection && (
+          <motion.div
+            key={label}
+            variants={collapseVariants}
+            initial="closed"
+            animate="open"
+            exit="closed"
+            className="border-b border-border"
+          >
+            {React.Children.map(children, (child, index) => (
+              <motion.div key={index} variants={childVariant}>
+                {child}
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
