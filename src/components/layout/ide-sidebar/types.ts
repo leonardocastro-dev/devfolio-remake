@@ -1,4 +1,6 @@
-import { Tab } from '@/components/layout/types'
+import { Tab } from '../types'
+
+export type SidebarItem = FileItem | FolderItem
 
 export interface TabsState {
   tabs: Tab[]
@@ -20,8 +22,6 @@ export type FolderItem = {
   color?: string
   children: SidebarItem[]
 }
-
-export type SidebarItem = FileItem | FolderItem
 
 export interface SidebarFileProps {
   schema: SidebarItem

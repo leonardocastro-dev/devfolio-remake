@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import Icon from '@/components/ui/icon'
 import { motion, AnimatePresence } from 'framer-motion'
-import { collapseVariants, childVariant } from './constants'
+import { collapseVariants, childVariant } from '../constants'
 
 interface SidebarSectionProps {
   label: string
@@ -32,7 +32,7 @@ const SidebarSection: React.FC<SidebarSectionProps> = ({
   }
 
   return (
-    <div className="sidebar-section">
+    <div className="last:border-b-0">
       <div
         className="flex items-center min-h-10 hover:bg-[#061B2D] px-3.5 cursor-pointer border-b border-border"
         onClick={toggleOpen}

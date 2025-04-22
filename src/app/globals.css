@@ -156,10 +156,6 @@ body {
   padding: 8px 18px;
 }
 
-.sidebar-section:last-child .border-b {
-  border-bottom: none;
-}
-
 @keyframes pulse {
   0% {
     box-shadow: 0 0 0 0 rgba(67, 217, 172, 0.7);

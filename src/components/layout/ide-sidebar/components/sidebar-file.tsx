@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react'
 import Icon from '@/components/ui/icon'
-import { useTabsStore } from './store'
-import { SidebarFileProps, FileItem, FolderItem } from './types'
+import { useTabsStore } from '../../tabs/store'
+import { SidebarFileProps, FileItem, FolderItem } from '../types'
 import { motion, AnimatePresence } from 'framer-motion'
 import { collapseVariants, childVariant } from '../constants'
 

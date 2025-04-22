@@ -2,10 +2,10 @@
 
 import IdeSidebar from '@/components/layout/ide-sidebar/ide-sidebar'
 import SidebarSection from '@/components/layout/ide-sidebar/components/sidebar-section'
-import SidebarFile from '@/components/layout/ide-sidebar/components/sidebar-file/sidebar-file'
+import SidebarFile from '@/components/layout/ide-sidebar/components/sidebar-file'
 import TabItem from '@/components/layout/tabs/tabs'
 import { personalInfoFiles } from './constants'
-import { useTabsStore } from '@/components/layout/ide-sidebar/components/sidebar-file/store'
+import { useTabsStore } from '@/components/layout/tabs/store'
 import GistViewer from './components/gist-viewer'
 import MarkdownViewer from './components/markdown-viewer'
 
