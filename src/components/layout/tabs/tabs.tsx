@@ -37,7 +37,7 @@ export default function TabItem({
       </motion.span>
       <motion.button
         layout
-        className="flex cursor-pointer items-center justify-center h-5 w-5 hover:bg-border rounded-sm transition-colors duration-300"
+        className="flex cursor-pointer items-center justify-center h-5 w-5 hover:bg-border rounded-xs transition-colors duration-300"
         initial={false}
         onClick={(e) => {
           e.stopPropagation()
