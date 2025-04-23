@@ -9,7 +9,7 @@ import { childVariant, BASE_PADDING, LEVEL_PADDING } from '../constants'
 
 const FileItemComponent: React.FC<FileItemProps> = ({ file, depth }) => {
   const { addTab, selectedTab } = useTabsStore()
-  const paddingLeft = BASE_PADDING + (depth * LEVEL_PADDING)
+  const paddingLeft = BASE_PADDING + depth * LEVEL_PADDING
 
   const handleFileClick = () => {
     addTab({ name: file.name })

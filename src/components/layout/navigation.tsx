@@ -59,8 +59,8 @@ export default function Navigation() {
             className="absolute bottom-0 h-[3px] bg-accent"
             layoutId="navigation-underline"
             transition={{
-              type: "tween",
-              ease: "easeInOut",
+              type: 'tween',
+              ease: 'easeInOut',
               duration: 0.3
             }}
             animate={{
