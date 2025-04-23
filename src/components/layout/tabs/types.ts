@@ -1,15 +1,14 @@
-import { Tab } from '../types'
+export interface Tab {
+  id: string
+  name: string
+  content?: string
+}
 
-interface TabsBaseProps {
+export interface TabsState {
   tabs: Tab[]
-  setSelectedTab: (id: string) => void
-}
-
-export interface TabsProps extends TabsBaseProps {
   selectedTab: string | null
+  addTab: (tab: Omit<Tab, 'id'>) => void
   removeTab: (id: string) => void
-}
-
-export interface TabsHandlersProps extends TabsBaseProps {
-  reorderTabs: (fromIndex: number, toIndex: number) => void
+  setSelectedTab: (id: string) => void
+  setTabs: (tabs: Tab[]) => void
 }

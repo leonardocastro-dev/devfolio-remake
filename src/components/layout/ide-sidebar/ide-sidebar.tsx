@@ -7,7 +7,7 @@ interface IdeSidebarProps {
 
 const IdeSidebar: React.FC<IdeSidebarProps> = ({ children }) => {
   return (
-    <div className="bg-transparent text-white w-64 h-full overflow-y-auto border-r border-border">
+    <div className="bg-transparent w-full text-white h-full overflow-y-auto border-r border-border">
       {children}
     </div>
   )

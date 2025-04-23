@@ -1,5 +1,5 @@
 import Icon from '@/components/ui/icon'
-import { Tab } from '@/components/layout/types'
+import { Tab } from '@/components/layout/tabs/types'
 import { motion, Reorder } from 'framer-motion'
 
 interface TabProps {

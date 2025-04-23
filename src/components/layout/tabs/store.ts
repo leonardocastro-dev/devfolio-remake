@@ -1,6 +1,6 @@
 import { create } from 'zustand'
-import { TabsState } from '../ide-sidebar/types'
-import { Tab } from '@/components/layout/types'
+import { TabsState } from './types'
+import { Tab } from '@/components/layout/tabs/types'
 
 const defaultTab: Tab = {
   id: 'intro',

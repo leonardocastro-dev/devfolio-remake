@@ -32,7 +32,7 @@ const SidebarSection: React.FC<SidebarSectionProps> = ({
   }
 
   return (
-    <div className="last:border-b-0">
+    <div>
       <div
         className="flex items-center min-h-10 hover:bg-[#061B2D] px-3.5 cursor-pointer border-b border-border"
         onClick={toggleOpen}
@@ -54,7 +54,7 @@ const SidebarSection: React.FC<SidebarSectionProps> = ({
             initial="closed"
             animate="open"
             exit="closed"
-            className="border-b border-border"
+            className="last:border-b-0 border-b border-border"
           >
             {React.Children.map(children, (child, index) => (
               <motion.div key={index} variants={childVariant}>

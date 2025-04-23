@@ -34,7 +34,7 @@ export default function GistViewer() {
 
         setGistFiles([gistWithHighlightedContent])
       } catch (err) {
-        console.error('Erro ao buscar Gist:', err)
+        console.error('Error fetching Gist:', err)
       } finally {
         setIsLoading(false)
       }
@@ -52,7 +52,7 @@ export default function GistViewer() {
 
         <div className="flex flex-col gap-8">
           {isLoading ? (
-            <div className="text-muted">Carregando gists...</div>
+            <div className="text-muted">Loading gists...</div>
           ) : (
             gistFiles.map((gist) => (
               <div key={gist.created_at}>
