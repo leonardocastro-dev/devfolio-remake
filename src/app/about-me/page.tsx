@@ -10,6 +10,13 @@ import GistViewer from './components/gist-viewer'
 import MarkdownViewer from './components/markdown-viewer'
 import Sidebar from '@/components/layout/sidebar/sidebar'
 import { AnimatePresence, Reorder } from 'framer-motion'
+import Icon from '@/components/ui/icon'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger
+} from '@/components/ui/tooltip'
 
 export default function AboutMe() {
   const { tabs, selectedTab, removeTab, setSelectedTab, setTabs } =
@@ -26,10 +33,23 @@ export default function AboutMe() {
                 <SidebarExplorer key={`personal-info-${i}`} schema={file} />
               ))}
             </SidebarSection>
-            <SidebarSection label="contacts">
-              <div className="flex flex-col gap-2 px-3.5 py-2.5">
-                <p className="text-muted">leonardocastro-dev@pm.me</p>
-                <p className="text-muted">+5511992474559</p>
+            <SidebarSection label="contacts" isLast={true}>
+              <div className="flex flex-col gap-2.5 px-3.5 py-2.5">
+                <span className="flex items-center gap-2">
+                  <Icon icon="mail" currentColor="var(--muted)" />
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <p className="text-muted">leonardocastro...</p>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>leonardocastro-dev@pm.me</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </span>
+                <span className="flex items-center gap-2">
+                  <Icon icon="phone" currentColor="var(--muted)" />
+                  <p className="text-muted">+5511992474559</p>
+                </span>
               </div>
             </SidebarSection>
           </>

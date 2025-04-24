@@ -1,3 +1,4 @@
+import Icon from '@/components/ui/icon'
 import React from 'react'
 
 interface SidebarProps {
@@ -6,10 +7,10 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ className }) => {
   return (
-    <div className="px-6 py-4 border-r border-border h-full flex flex-col gap-2">
-      <div className="w-6 h-6 bg-muted rounded-md"></div>
-      <div className="w-6 h-6 bg-muted rounded-md"></div>
-      <div className="w-6 h-6 bg-muted rounded-md"></div>
+    <div className="px-6 py-4 border-r border-border h-full flex flex-col gap-6">
+      <Icon icon="professional-info" currentColor="var(--muted)" />
+      <Icon icon="personal-info" currentColor="var(--muted)" />
+      <Icon icon="hobbies" currentColor="var(--muted)" />
     </div>
   )
 }

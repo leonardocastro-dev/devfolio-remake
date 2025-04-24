@@ -3,6 +3,7 @@ import { Fira_Code } from 'next/font/google'
 import './globals.css'
 import Footer from '@/components/layout/footer'
 import Navigation from '@/components/layout/navigation'
+import { TooltipProvider } from '@/components/ui/tooltip'
 
 const firaCode = Fira_Code({
   variable: '--font-fira-code',
@@ -25,7 +26,9 @@ export default function RootLayout({
         className={`${firaCode.variable} antialiased h-screen flex flex-col`}
       >
         <Navigation />
-        <main className="flex-1 overflow-hidden">{children}</main>
+        <TooltipProvider>
+          <main className="flex-1 overflow-hidden">{children}</main>
+        </TooltipProvider>
         <Footer />
       </body>
     </html>

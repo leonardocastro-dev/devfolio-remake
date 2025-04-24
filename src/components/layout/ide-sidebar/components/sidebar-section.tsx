@@ -8,12 +8,14 @@ import { collapseVariants, childVariant } from '../constants'
 interface SidebarSectionProps {
   label: string
   isOpen?: boolean
+  isLast?: boolean
   children: React.ReactNode
 }
 
 const SidebarSection: React.FC<SidebarSectionProps> = ({
   label,
   isOpen: initialIsOpen = true,
+  isLast = false,
   children
 }) => {
   const [isOpen, setIsOpen] = useState(initialIsOpen)
@@ -54,7 +56,7 @@ const SidebarSection: React.FC<SidebarSectionProps> = ({
             initial="closed"
             animate="open"
             exit="closed"
-            className="last:border-b-0 border-b border-border"
+            className={!isLast ? "border-b border-border" : ""}
           >
             {React.Children.map(children, (child, index) => (
               <motion.div key={index} variants={childVariant}>
