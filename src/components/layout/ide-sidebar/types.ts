@@ -26,3 +26,10 @@ export interface SidebarFileProps {
   schema: SidebarItem
   depth?: number
 }
+
+export interface SidebarSectionProps {
+  label: string
+  isOpen?: boolean
+  isLast?: boolean
+  children: React.ReactNode
+}

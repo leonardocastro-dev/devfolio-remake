@@ -7,7 +7,7 @@ import { FileItemProps } from '../types'
 import { motion } from 'framer-motion'
 import { childVariant, BASE_PADDING, LEVEL_PADDING } from '../constants'
 
-const FileItemComponent: React.FC<FileItemProps> = ({ file, depth }) => {
+export default function FileItemComponent({ file, depth }: FileItemProps) {
   const { addTab, selectedTab } = useTabsStore()
   const paddingLeft = BASE_PADDING + depth * LEVEL_PADDING
 
@@ -39,5 +39,3 @@ const FileItemComponent: React.FC<FileItemProps> = ({ file, depth }) => {
     </motion.div>
   )
 }
-
-export default FileItemComponent

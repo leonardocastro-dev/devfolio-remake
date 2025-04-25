@@ -7,17 +7,15 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { collapseVariants, BASE_PADDING, LEVEL_PADDING } from '../constants'
 import SidebarExplorer from './sidebar-explorer'
 
-const FolderItemComponent: React.FC<FolderItemProps> = ({ folder, depth }) => {
+export default function FolderItemComponent({ folder, depth }: FolderItemProps) {
   const [isOpen, setIsOpen] = useState(true)
   const paddingLeft = BASE_PADDING + depth * LEVEL_PADDING
-
-  const handleToggle = () => setIsOpen(!isOpen)
 
   return (
     <div>
       <div
         className="flex items-center hover:bg-[#061B2D] px-3.5 py-2.5 cursor-pointer group"
-        onClick={handleToggle}
+        onClick={() => setIsOpen(!isOpen)}
         style={{ paddingLeft }}
       >
         <span className="mr-3">
@@ -59,5 +57,3 @@ const FolderItemComponent: React.FC<FolderItemProps> = ({ folder, depth }) => {
     </div>
   )
 }
-
-export default FolderItemComponent
