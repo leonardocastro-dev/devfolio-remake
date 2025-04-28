@@ -5,11 +5,10 @@ import Icon from '@/components/ui/icon'
 import { useTabsStore } from '../../tabs/store'
 import { FileItemProps } from '../types'
 import { motion } from 'framer-motion'
-import { childVariant, BASE_PADDING, LEVEL_PADDING } from '../constants'
+import { childVariant, paddingLeft } from '../constants'
 
 export default function FileItemComponent({ file, depth }: FileItemProps) {
   const { addTab, selectedTab } = useTabsStore()
-  const paddingLeft = BASE_PADDING + depth * LEVEL_PADDING
 
   const handleFileClick = () => {
     addTab({ name: file.name })
@@ -20,8 +19,8 @@ export default function FileItemComponent({ file, depth }: FileItemProps) {
   return (
     <motion.div
       variants={childVariant}
-      className="flex items-center hover:bg-[#061B2D] pr-3.5 py-2.5 cursor-pointer group"
-      style={{ paddingLeft }}
+      className="flex items-center hover:bg-[#061B2D] pr-3.5 py-2 cursor-pointer group"
+      style={{ paddingLeft: paddingLeft(depth) }}
       onClick={handleFileClick}
     >
       <span className="mr-2">

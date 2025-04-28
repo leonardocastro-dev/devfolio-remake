@@ -79,7 +79,7 @@ export default function GistViewer() {
                   {Object.values(gist.files).map((file) => (
                     <div
                       key={file.filename}
-                      className="bg-card border border-border rounded-2xl overflow-hidden px-7 py-6"
+                      className="bg-primary-600 border border-border rounded-2xl overflow-hidden px-7 py-6"
                     >
                       <div
                         dangerouslySetInnerHTML={{

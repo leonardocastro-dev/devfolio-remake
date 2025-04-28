@@ -22,8 +22,12 @@ import { getSectionData } from './utils'
 export default function AboutMe() {
   const { tabs, selectedTab, removeTab, setSelectedTab, setTabs } =
     useTabsStore()
-  const [activeSection, setActiveSection] = useState<SidebarType>('personal-info')
-  const currentSectionData = useMemo(() => getSectionData(activeSection), [activeSection])
+  const [activeSection, setActiveSection] =
+    useState<SidebarType>('personal-info')
+  const currentSectionData = useMemo(
+    () => getSectionData(activeSection),
+    [activeSection]
+  )
 
   return (
     <main className="flex h-full">
@@ -34,7 +38,10 @@ export default function AboutMe() {
         />
         <IdeSidebar>
           <>
-            <SidebarSection key={activeSection} label={currentSectionData.label}>
+            <SidebarSection
+              key={activeSection}
+              label={currentSectionData.label}
+            >
               {currentSectionData.files.map((file, i) => (
                 <SidebarExplorer key={`${activeSection}-${i}`} schema={file} />
               ))}
@@ -45,7 +52,9 @@ export default function AboutMe() {
                   <Icon icon="mail" currentColor="var(--muted)" />
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <p className="cursor-default text-muted">leonardocastro...</p>
+                      <p className="cursor-default text-muted">
+                        leonardocastro...
+                      </p>
                     </TooltipTrigger>
                     <TooltipContent>
                       <p>leonardocastro-dev@pm.me</p>

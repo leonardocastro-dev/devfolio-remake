@@ -4,19 +4,21 @@ import React, { useState } from 'react'
 import Icon from '@/components/ui/icon'
 import { FolderItemProps } from '../types'
 import { motion, AnimatePresence } from 'framer-motion'
-import { collapseVariants, BASE_PADDING, LEVEL_PADDING } from '../constants'
+import { collapseVariants, paddingLeft } from '../constants'
 import SidebarExplorer from './sidebar-explorer'
 
-export default function FolderItemComponent({ folder, depth }: FolderItemProps) {
+export default function FolderItemComponent({
+  folder,
+  depth
+}: FolderItemProps) {
   const [isOpen, setIsOpen] = useState(true)
-  const paddingLeft = BASE_PADDING + depth * LEVEL_PADDING
 
   return (
     <div>
       <div
-        className="flex items-center hover:bg-[#061B2D] px-3.5 py-2.5 cursor-pointer group"
+        className="flex items-center hover:bg-[#061B2D] pr-3.5 py-2 cursor-pointer group"
         onClick={() => setIsOpen(!isOpen)}
-        style={{ paddingLeft }}
+        style={{ paddingLeft: paddingLeft(depth) }}
       >
         <span className="mr-3">
           <Icon

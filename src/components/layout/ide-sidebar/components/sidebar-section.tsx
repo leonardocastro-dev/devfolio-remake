@@ -46,7 +46,7 @@ export default function SidebarSection({
             initial="closed"
             animate="open"
             exit="closed"
-            className={!isLast ? "border-b border-border" : ""}
+            className={!isLast ? 'border-b border-border' : ''}
           >
             {React.Children.map(children, (child, index) => (
               <motion.div key={index} variants={childVariant}>
@@ -59,4 +59,3 @@ export default function SidebarSection({
     </div>
   )
 }
-

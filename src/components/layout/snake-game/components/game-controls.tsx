@@ -7,7 +7,7 @@ export function GameControls({ foodCollected }: GameControlsProps) {
   return (
     <div className="flex flex-col justify-between">
       <div className="flex flex-col gap-5">
-        <div className="rounded-lg bg-secondary-foreground/19 px-3 py-4">
+        <div className="rounded-xl bg-primary-500/19 px-3 py-4">
           <p className="text-sm">{'// use keyboard'}</p>
           <p className="text-sm">{'// arrows to play'}</p>
 

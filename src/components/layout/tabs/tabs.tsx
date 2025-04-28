@@ -22,7 +22,7 @@ export default function TabItem({
       initial={{ opacity: 0, y: 30 }}
       animate={{
         opacity: 1,
-        backgroundColor: isSelected ? '#061B2D' : 'transparent',
+        backgroundColor: isSelected ? 'var(--color-primary-400)' : 'transparent',
         color: isSelected ? '#fff' : '#607b96',
         y: 0,
         transition: { duration: 0.15 }

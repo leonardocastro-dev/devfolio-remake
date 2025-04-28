@@ -17,7 +17,7 @@ export function GameBoard({
 }: GameBoardProps) {
   return (
     <div
-      className="relative overflow-hidden rounded-lg bg-background/84"
+      className="relative overflow-hidden rounded-lg bg-primary-500/84"
       style={{
         width: `${BOARD_WIDTH * GRID_SIZE}px`,
         height: `${BOARD_HEIGHT * GRID_SIZE}px`

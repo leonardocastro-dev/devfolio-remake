@@ -1,4 +1,8 @@
-import { hobbiesFiles, personalInfoFiles, professionalInfoFiles } from "./constants"
+import {
+  hobbiesFiles,
+  personalInfoFiles,
+  professionalInfoFiles
+} from './constants'
 
 export function getSectionData(activeSection: string) {
   switch (activeSection) {
