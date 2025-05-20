@@ -25,10 +25,10 @@ export default function FilterProject() {
             <div className="flex items-center gap-2.5 ml-6">
               <Icon
                 icon={tech.toLowerCase()}
-                currentColor={selected ? 'white' : 'var(--muted)'}
+                currentColor={selected ? 'white' : 'var(--muted-100)'}
               />
               <span
-                className={`text-sm ${selected ? 'text-white' : 'text-muted'}`}
+                className={`text-sm ${selected ? 'text-white' : 'text-muted-foreground'}`}
               >
                 {tech}
               </span>

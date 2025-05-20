@@ -10,7 +10,7 @@ export function Overlay({ type, onAction }: OverlayProps) {
       {(type === 'gameOver' || type === 'gameWon') && (
         <div
           className={cn(
-            'bg-primary-500/84 py-3 rounded-lg text-2xl w-full text-center absolute text-nowrap left-1/2 transform -translate-x-1/2',
+            'bg-primary-400/84 py-3 rounded-lg text-2xl w-full text-center absolute text-nowrap left-1/2 transform -translate-x-1/2',
             titleColor
           )}
           style={{

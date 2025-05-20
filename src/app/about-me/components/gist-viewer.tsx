@@ -52,7 +52,7 @@ export default function GistViewer() {
 
         <div className="flex flex-col gap-8">
           {isLoading ? (
-            <div className="text-muted">Loading gists...</div>
+            <div className="text-muted-foreground">Loading gists...</div>
           ) : (
             gistFiles.map((gist) => (
               <div key={gist.created_at}>
@@ -69,7 +69,7 @@ export default function GistViewer() {
                   </div>
                   <div className="flex flex-col">
                     <span className="text-sm font-bold text-chart-1">{`@${gist.owner.login || 'User'}`}</span>
-                    <span className="text-xs text-muted">
+                    <span className="text-xs text-muted-foreground">
                       {`Created ${new Date(gist.created_at || '').toLocaleDateString('pt-BR')}`}
                     </span>
                   </div>
@@ -79,7 +79,7 @@ export default function GistViewer() {
                   {Object.values(gist.files).map((file) => (
                     <div
                       key={file.filename}
-                      className="bg-primary-600 border border-border rounded-2xl overflow-hidden px-7 py-6"
+                      className="bg-primary-500 border border-primary-200 rounded-2xl overflow-hidden px-7 py-6"
                     >
                       <div
                         dangerouslySetInnerHTML={{

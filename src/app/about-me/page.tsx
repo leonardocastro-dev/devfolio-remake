@@ -1,13 +1,13 @@
 'use client'
 
-import IdeSidebar from '@/components/layout/ide-sidebar/ide-sidebar'
+import IdeSidebar from '@/components/layout/ide-sidebar'
 import SidebarSection from '@/components/layout/ide-sidebar/components/sidebar-section'
 import SidebarExplorer from '@/components/layout/ide-sidebar/components/sidebar-explorer'
-import TabItem from '@/components/layout/tabs/tabs'
+import TabItem from '@/components/layout/tabs'
 import { useTabsStore } from '@/components/layout/tabs/store'
 import GistViewer from './components/gist-viewer'
 import MarkdownViewer from './components/markdown-viewer'
-import Sidebar from '@/components/layout/sidebar/sidebar'
+import Sidebar from '@/components/layout/sidebar'
 import { SidebarType } from '@/components/layout/sidebar/types'
 import { AnimatePresence, Reorder } from 'framer-motion'
 import Icon from '@/components/ui/icon'
@@ -49,10 +49,10 @@ export default function AboutMe() {
             <SidebarSection label="contacts" isLast={true}>
               <div className="flex flex-col gap-2.5 px-3.5 py-2.5">
                 <span className="flex items-center gap-2">
-                  <Icon icon="mail" currentColor="var(--muted)" />
+                  <Icon icon="mail" currentColor="var(--muted-100)" />
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <p className="cursor-default text-muted">
+                      <p className="cursor-default text-muted-foreground">
                         leonardocastro...
                       </p>
                     </TooltipTrigger>
@@ -62,17 +62,16 @@ export default function AboutMe() {
                   </Tooltip>
                 </span>
                 <span className="flex items-center gap-2">
-                  <Icon icon="phone" currentColor="var(--muted)" />
-                  <p className="text-muted">+5511992474559</p>
+                  <Icon icon="phone" currentColor="var(--muted-100)" />
+                  <p className="text-muted-foreground">+5511992474559</p>
                 </span>
               </div>
             </SidebarSection>
           </>
         </IdeSidebar>
       </div>
-
       <div className="w-full flex flex-col h-full">
-        <nav className="overflow-hidden min-h-10 relative border-b border-border">
+        <nav className="min-h-10 relative border-b border-primary-200">
           <Reorder.Group
             as="ul"
             axis="x"
@@ -93,7 +92,6 @@ export default function AboutMe() {
             </AnimatePresence>
           </Reorder.Group>
         </nav>
-
         <div className="grid grid-cols-2 h-full overflow-hidden">
           <MarkdownViewer selectedTab={selectedTab} />
           <GistViewer />

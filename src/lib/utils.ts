@@ -8,8 +8,8 @@ export function cn(...inputs: ClassValue[]) {
 
 let highlighterPromise: Promise<Highlighter> | null = null
 
-const customTheme = {
-  name: 'custom-theme',
+const cardTheme = {
+  name: 'card-theme',
   type: 'dark' as const,
   fg: '#607b96',
   bg: '#00000000',
@@ -48,10 +48,38 @@ const customTheme = {
   }
 }
 
-export async function highlightCode(code: string, lang: string = 'ts') {
+const signalTheme = {
+  name: 'signal-theme',
+  type: 'dark' as const,
+  fg: '#607b96',
+  bg: '#00000000',
+  settings: [
+    {
+      scope: ['keyword.operator', 'storage'],
+      settings: { foreground: '#c98bdf' }
+    },
+    {
+      scope: ['string'],
+      settings: { foreground: '#fea55f' }
+    },
+    {
+      scope: ['variable', 'entity.name.function', 'meta.object-literal.key'],
+      settings: { foreground: '#4d5bce' }
+    }
+  ],
+  colors: {
+    'editor.background': '#00000000'
+  }
+}
+
+export async function highlightCode(
+  code: string,
+  lang: string = 'ts',
+  variant: 'card' | 'signal' = 'card'
+) {
   if (!highlighterPromise) {
     highlighterPromise = createHighlighter({
-      themes: [customTheme],
+      themes: [cardTheme, signalTheme],
       langs: ['ts', 'js', 'javascript', 'typescript', 'md', 'markdown']
     })
   }
@@ -79,6 +107,6 @@ export async function highlightCode(code: string, lang: string = 'ts') {
 
   return highlighter.codeToHtml(code.trim(), {
     lang,
-    theme: 'custom-theme'
+    theme: variant === 'card' ? 'card-theme' : 'signal-theme'
   })
 }

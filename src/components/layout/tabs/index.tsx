@@ -1,13 +1,6 @@
 import Icon from '@/components/ui/icon'
-import { Tab } from '@/components/layout/tabs/types'
 import { motion, Reorder } from 'framer-motion'
-
-interface TabProps {
-  tab: Tab
-  isSelected: boolean
-  onClick: () => void
-  onRemove: () => void
-}
+import { TabProps } from './types'
 
 export default function TabItem({
   tab,
@@ -22,15 +15,17 @@ export default function TabItem({
       initial={{ opacity: 0, y: 30 }}
       animate={{
         opacity: 1,
-        backgroundColor: isSelected ? 'var(--color-primary-400)' : 'transparent',
+        backgroundColor: isSelected
+          ? 'var(--color-primary-300)'
+          : 'transparent',
         color: isSelected ? '#fff' : '#607b96',
         y: 0,
         transition: { duration: 0.15 }
       }}
       exit={{ opacity: 0, y: 20, transition: { duration: 0.3 } }}
-      whileDrag={{ backgroundColor: '#1e2d3d' }}
-      whileHover={{ backgroundColor: '#081C2D' }}
-      className="flex gap-12 items-center px-3 py-2 border-r border-border cursor-pointer min-w-[100px] flex-shrink-0"
+      whileDrag={{ backgroundColor: 'var(--color-primary-200)' }}
+      whileHover={{ backgroundColor: 'var(--color-primary-300)' }}
+      className="flex gap-12 items-center px-3 py-2 border-r border-primary-200 cursor-pointer min-w-[100px] flex-shrink-0"
       onPointerDown={onClick}
     >
       <motion.span layout="position" className="pointer-events-none">
@@ -47,7 +42,7 @@ export default function TabItem({
       >
         <Icon
           icon="close"
-          className={isSelected ? 'fill-white' : 'fill-muted'}
+          className={isSelected ? 'fill-white' : 'fill-muted-100'}
         />
       </motion.button>
     </Reorder.Item>

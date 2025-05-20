@@ -26,12 +26,12 @@ export default function FileItemComponent({ file, depth }: FileItemProps) {
       <span className="mr-2">
         <Icon
           icon="markdown"
-          currentColor="var(--muted)"
+          currentColor="var(--muted-100)"
           className={`${isActive ? 'fill-white' : 'group-hover:fill-white'}`}
         />
       </span>
       <span
-        className={`text-sm ${isActive ? 'text-white' : 'text-muted group-hover:text-white'}`}
+        className={`text-sm ${isActive ? 'text-white' : 'text-muted-foreground group-hover:text-white'}`}
       >
         {file.name}
       </span>

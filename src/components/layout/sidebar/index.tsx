@@ -8,7 +8,7 @@ export default function Sidebar({
   activeSection
 }: SidebarProps) {
   return (
-    <div className="px-6 py-4 border-r border-border h-full flex flex-col gap-6">
+    <div className="px-6 py-4 border-r border-primary-200 h-full flex flex-col gap-6">
       {sidebarItems.map((item) => (
         <button
           key={item.id}
@@ -17,10 +17,10 @@ export default function Sidebar({
         >
           <Icon
             icon={item.icon}
-            className="group-hover:fill-muted"
+            className="group-hover:fill-muted-100"
             currentColor={
               activeSection === item.id
-                ? 'var(--muted)'
+                ? 'var(--muted-100)'
                 : 'rgba(96, 123, 150, 0.4)'
             }
           />

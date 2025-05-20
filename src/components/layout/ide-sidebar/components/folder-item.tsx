@@ -24,15 +24,15 @@ export default function FolderItemComponent({
           <Icon
             icon="arrow"
             className={`${isOpen ? 'rotate-180' : 'rotate-90'} transition-transform`}
-            currentColor="var(--muted)"
+            currentColor="var(--muted-100)"
           />
         </span>
         <Icon
           className="mr-2"
           icon="folder"
-          currentColor={folder.color || 'var(--muted)'}
+          currentColor={folder.color || 'var(--muted-100)'}
         />
-        <span className="text-sm text-muted group-hover:text-white">
+        <span className="text-sm text-muted-foreground group-hover:text-white">
           {folder.name}
         </span>
       </div>

@@ -4,6 +4,13 @@ export interface Tab {
   content?: string
 }
 
+export interface TabProps {
+  tab: Tab
+  isSelected: boolean
+  onClick: () => void
+  onRemove: () => void
+}
+
 export interface TabsState {
   tabs: Tab[]
   selectedTab: string | null

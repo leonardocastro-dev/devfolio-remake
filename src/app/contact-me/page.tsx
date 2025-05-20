@@ -2,16 +2,16 @@
 
 import IdeSidebar from '@/components/layout/ide-sidebar'
 import SidebarSection from '@/components/layout/ide-sidebar/components/sidebar-section'
-import FilterProject from '@/components/layout/ide-sidebar/components/filter-project'
 import TabItem from '@/components/layout/tabs'
 import { Tab } from '@/components/layout/tabs/types'
 import { AnimatePresence, Reorder } from 'framer-motion'
 import Icon from '@/components/ui/icon'
-import ProjectList from './components/project-list'
 import { useFilterStore } from '@/components/layout/ide-sidebar/components/filter-project/store'
 import { useEffect, useState } from 'react'
+import ContactForm from './components/contact-form'
+import ContactCode from './components/contact-code'
 
-export default function Projects() {
+export default function ContactMe() {
   const { selectedTechs } = useFilterStore()
   const [filterTab, setFilterTab] = useState<Tab | null>(null)
 
@@ -36,10 +36,7 @@ export default function Projects() {
       <div className="flex max-w-xs w-full h-full">
         <IdeSidebar>
           <>
-            <SidebarSection label="projects">
-              <FilterProject />
-            </SidebarSection>
-            <SidebarSection label="contacts" isLast={true}>
+            <SidebarSection label="contacts">
               <div className="flex flex-col gap-2.5 px-3.5 py-2.5">
                 <span className="flex items-center gap-2">
                   <Icon icon="mail" currentColor="var(--muted-100)" />
@@ -53,11 +50,14 @@ export default function Projects() {
                 </span>
               </div>
             </SidebarSection>
+            <SidebarSection label="find-me-also-in" isLast={true}>
+              <div></div>
+            </SidebarSection>
           </>
         </IdeSidebar>
       </div>
       <div className="w-full flex flex-col h-full">
-        <nav className="min-h-10 relative border-b border-primary-200">
+        <nav className="overflow-hidden min-h-10 relative border-b border-primary-200">
           <Reorder.Group
             as="ul"
             axis="x"
@@ -78,7 +78,10 @@ export default function Projects() {
             </AnimatePresence>
           </Reorder.Group>
         </nav>
-        <ProjectList />
+        <div className="grid grid-cols-2 h-full overflow-hidden">
+          <ContactForm />
+          <ContactCode />
+        </div>
       </div>
     </main>
   )

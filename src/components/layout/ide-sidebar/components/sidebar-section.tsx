@@ -26,7 +26,7 @@ export default function SidebarSection({
   return (
     <div>
       <div
-        className="flex items-center min-h-10 hover:bg-[#061B2D] px-3.5 cursor-pointer border-b border-border"
+        className="flex items-center min-h-10 hover:bg-[#061B2D] px-3.5 cursor-pointer border-b border-primary-200"
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className="mr-3">
@@ -46,7 +46,7 @@ export default function SidebarSection({
             initial="closed"
             animate="open"
             exit="closed"
-            className={!isLast ? 'border-b border-border' : ''}
+            className={!isLast ? 'border-b border-primary-200' : ''}
           >
             {React.Children.map(children, (child, index) => (
               <motion.div key={index} variants={childVariant}>

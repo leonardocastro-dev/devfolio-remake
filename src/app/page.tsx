@@ -1,17 +1,21 @@
-import SnakeGame from '@/components/layout/snake-game/snake-game'
+import SnakeGame from '@/components/layout/snake-game'
 
 export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center overflow-x-hidden px-8 h-full">
       <div className="flex max-w-7xl w-full items-center justify-between flex-grow gap-8">
         <header className="flex flex-col justify-center">
-          <p className="text-lg text-foreground mb-2">Hello everyone. I am</p>
+          <p className="text-lg text-primary-foreground mb-2">
+            Hello everyone. I am
+          </p>
           <h1 className="font-retina text-6xl mb-4 -ml-1.5">Leonardo Castro</h1>
           <p className="text-chart-1 text-3xl">&gt; Full-stack developer</p>
 
           <div className="space-y-2 mt-20">
-            <p className="text-muted">{'// complete the game to continue'}</p>
-            <p className="text-muted">
+            <p className="text-muted-foreground">
+              {'// complete the game to continue'}
+            </p>
+            <p className="text-muted-foreground">
               {'// you can also see it on my Github page'}
             </p>
             <p className="font-medium">

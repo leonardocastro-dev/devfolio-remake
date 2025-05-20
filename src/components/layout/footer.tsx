@@ -3,10 +3,10 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border">
+    <footer className="border-t border-primary-200">
       <nav className="flex justify-between">
         <div className="flex">
-          <span className="text-muted px-3.5 py-3">find me in:</span>
+          <span className="text-muted-foreground px-3.5 py-3">find me in:</span>
           <ul className="flex">
             <li>
               <Link
@@ -19,7 +19,7 @@ export default function Footer() {
                 <Icon
                   icon="linkedin"
                   className="group-hover:fill-white transition-colors duration-200"
-                  currentColor="var(--muted)"
+                  currentColor="var(--muted-100)"
                 />
               </Link>
             </li>
@@ -29,14 +29,14 @@ export default function Footer() {
           href="https://github.com/leonardocastro-dev"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-muted border-l px-3.5 py-3 flex hover:text-white gap-2 group transition-colors duration-200"
+          className="text-muted-foreground border-l px-3.5 py-3 flex hover:text-white gap-2 group transition-colors duration-200"
           aria-label="GitHub of Leonardo Castro"
         >
           @leonardocastro-dev
           <Icon
             icon="github"
             className="group-hover:fill-white transition-colors duration-200"
-            currentColor="var(--muted)"
+            currentColor="var(--muted-100)"
           />
         </Link>
       </nav>

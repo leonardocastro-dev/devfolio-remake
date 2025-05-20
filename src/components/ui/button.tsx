@@ -12,8 +12,8 @@ export function Button({
   ...props
 }: ButtonProps) {
   const variantStyles = {
-    default: 'bg-primary text-white hover:bg-[#263B50]',
-    secondary: 'bg-accent text-accent-foreground hover:bg-secondary',
+    default: 'bg-primary-200 text-white hover:bg-primary-100',
+    secondary: 'bg-accent text-primary-600 hover:bg-secondary',
     outline: 'border border-white bg-transparent hover:border-white/50',
     link: 'text-primary underline-offset-4 hover:underline'
   }
