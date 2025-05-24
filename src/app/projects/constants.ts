@@ -6,7 +6,7 @@ export const projectsData: ProjectCardProps[] = [
     title: 'crm-prototype',
     description:
       'Application to manage customer relationships and sales processes.',
-    image: '/crm.png',
+    image: '/crm-prototype.png',
     techs: ['React', 'Tailwindcss', 'Nextjs', 'SQL'],
     link: 'https://crm-woad-five.vercel.app/'
   },
@@ -14,9 +14,17 @@ export const projectsData: ProjectCardProps[] = [
     id: 2,
     title: 'todo-list',
     description:
-      'Application to manage daily tasks efficiently and in an organized manner.',
+      'App to manage and organize daily tasks efficiently and effortlessly.',
     image: '/todo-list.png',
     techs: ['Vue', 'Tailwindcss', 'Nuxt', 'Firebase'],
     link: 'https://todo-list-rho-sandy.vercel.app/'
+  },
+  {
+    id: 3,
+    title: 'crypto-dashboard',
+    description: 'Cryptocurrency trading dashboard with real-time monitoring.',
+    image: '/crypto-dashboard.png',
+    techs: ['React', 'Vite', 'SCSS'],
+    link: 'https://crypto-dashboard-beige-three.vercel.app/'
   }
 ]

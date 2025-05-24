@@ -5,13 +5,9 @@ export const technologies: { tech: TechFilter }[] = [
   { tech: 'Vue' },
   { tech: 'Nextjs' },
   { tech: 'Nuxt' },
-  { tech: 'Nestjs' },
-  { tech: 'TypeOrm' },
-  { tech: 'Express' },
-  { tech: 'Prisma' },
+  { tech: 'Vite' },
   { tech: 'Tailwindcss' },
   { tech: 'SQL' },
   { tech: 'Firebase' },
-  { tech: 'MongoDB' },
-  { tech: 'AWS' }
+  { tech: 'SCSS' }
 ]
