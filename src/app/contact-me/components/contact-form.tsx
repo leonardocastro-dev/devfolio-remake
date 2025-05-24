@@ -2,17 +2,20 @@ import { Button } from '@/components/ui/button'
 import Input from '@/components/ui/input'
 import Textarea from '@/components/ui/textarea'
 import { useState } from 'react'
+import { useInputStore } from '@/components/ui/input-store'
 
 export default function ContactForm() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [status, setStatus] = useState<
     'idle' | 'sending' | 'success' | 'error'
   >('idle')
 
+  const values = useInputStore((state) => state.values)
+  const setValue = useInputStore((state) => state.setValue)
+
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
-    setForm({ ...form, [e.target.name]: e.target.value })
+    setValue(e.target.name, e.target.value)
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -20,12 +23,12 @@ export default function ContactForm() {
     setStatus('sending')
 
     try {
-      const res = await fetch('/api', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(form)
+        body: JSON.stringify(values)
       })
 
       if (!res.ok) {
@@ -33,7 +36,9 @@ export default function ContactForm() {
       }
 
       setStatus('success')
-      setForm({ name: '', email: '', message: '' })
+      setValue('name', '')
+      setValue('email', '')
+      setValue('message', '')
     } catch (error) {
       console.error('Error sending email:', error)
       setStatus('error')
@@ -49,19 +54,19 @@ export default function ContactForm() {
         <Input
           label="_name:"
           name="name"
-          value={form.name}
+          value={values.name}
           onChange={handleChange}
         />
         <Input
           label="_email:"
           name="email"
-          value={form.email}
+          value={values.email}
           onChange={handleChange}
         />
         <Textarea
           label="_message:"
           name="message"
-          value={form.message}
+          value={values.message}
           onChange={handleChange}
         />
         <Button className="w-fit" type="submit" disabled={status === 'sending'}>
