@@ -113,6 +113,7 @@ const sections = {
  */`,
   freelance: `/**
  * Remote -- 2021/01 - Present
+ * Full-Stack Engineer
  *
  * Developed and maintained websites using Angular and React with Next.js,
  * delivering responsive, high-performance interfaces tailored to client needs.
