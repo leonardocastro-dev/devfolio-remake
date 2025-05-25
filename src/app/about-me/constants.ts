@@ -58,6 +58,10 @@ export const professionalInfoFiles: SidebarItem[] = [
       {
         type: 'file',
         name: 'mks'
+      },
+      {
+        type: 'file',
+        name: 'freelance'
       }
     ]
   },
