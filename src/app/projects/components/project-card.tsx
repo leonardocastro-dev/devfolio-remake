@@ -6,8 +6,7 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { ProjectCardProps } from '../types'
 
-const MAIN_TECHS = ['React', 'Vue'] as const
-type MainTech = (typeof MAIN_TECHS)[number]
+type MainTech = 'React' | 'Vue'
 
 const TECH_COLORS: Record<MainTech, string> = {
   React: '#86E1F9',
