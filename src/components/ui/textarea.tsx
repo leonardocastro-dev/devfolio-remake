@@ -11,7 +11,7 @@ export default function Textarea({ label, name, ...rest }: TextareaProps) {
         <label className="text-sm text-muted-foreground">{label}</label>
       )}
       <textarea
-        className="px-3.5 py-2.5 text-muted-200 bg-primary-500 rounded-xl border border-muted-100 focus:outline-none focus:shadow-[0_0_0_2.5px_rgba(96,123,150,0.4)] min-h-[145px] resize-none"
+        className="px-3.5 py-2.5 text-muted-200 bg-primary-500 rounded-xl border border-muted-100 focus:outline-none focus:ring-2 focus:ring-[rgba(96,123,150,0.4)] min-h-[145px] resize-none"
         value={value}
         onChange={(e) => setValue(name, e.target.value)}
         name={name}

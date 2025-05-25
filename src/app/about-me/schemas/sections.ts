@@ -36,6 +36,35 @@ const sections = {
  *
  * I'm ready to take on significant responsibilities. I have attention to detail
  * and a genuine desire to make an impact wherever I am.
+ */`,
+  simpleshub: `/**
+ * Contributed to the development of a software platform designed to support
+ * accountants by integrating OpenAI technologies for advanced data processing
+ * and workflow automation.
+ *
+ * Developed user interfaces with Vue 2, Sass, and JavaScript, delivering dynamic,
+ * responsive, and intuitive user experiences.
+ *
+ * Implemented data visualization using libraries like Vue Apex Charts, enhancing
+ * the platform’s analytical capabilities with real-time and highly customizable charts.
+ *
+ * Promoted scalability and maintainability by designing modular, reusable components,
+ * accelerating future development and reducing technical debt.
+ *
+ * Worked on-site full-time as an independent contractor (PJ), collaborating closely
+ * with cross-functional teams to meet deadlines and deliver high-quality solutions.
+ */`,
+  houzewerks: `/**
+ * I'm driven by challenges. I have a natural energy that pushes me
+ * to be the best in everything I do.
+ * I like to stand out not only for what I deliver,
+ * but for how I think, shape the environment, and solve problems.
+ */`,
+  mks: `/**
+ * I'm driven by challenges. I have a natural energy that pushes me
+ * to be the best in everything I do.
+ * I like to stand out not only for what I deliver,
+ * but for how I think, shape the environment, and solve problems.
  */`
 }
 

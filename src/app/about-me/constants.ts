@@ -49,11 +49,15 @@ export const professionalInfoFiles: SidebarItem[] = [
     children: [
       {
         type: 'file',
-        name: 'accenture'
+        name: 'simpleshub'
       },
       {
         type: 'file',
-        name: 'microsoft'
+        name: 'houzewerks'
+      },
+      {
+        type: 'file',
+        name: 'mks'
       }
     ]
   },

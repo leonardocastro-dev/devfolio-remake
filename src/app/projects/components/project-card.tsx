@@ -6,6 +6,14 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { ProjectCardProps } from '../types'
 
+const MAIN_TECHS = ['React', 'Vue'] as const
+type MainTech = (typeof MAIN_TECHS)[number]
+
+const TECH_COLORS: Record<MainTech, string> = {
+  React: '#86E1F9',
+  Vue: '#81D4AF'
+}
+
 export default function ProjectCard({
   id,
   title,
@@ -14,6 +22,10 @@ export default function ProjectCard({
   techs,
   link
 }: ProjectCardProps) {
+  const mainTech = techs.find((tech) => tech === 'React' || tech === 'Vue') as
+    | MainTech
+    | undefined
+
   return (
     <div className="flex w-[370px] flex-col gap-3.5">
       <h3 className="text-muted-foreground">
@@ -23,17 +35,20 @@ export default function ProjectCard({
       <div className="bg-primary-500 rounded-2xl flex flex-col h-[315px] overflow-hidden border border-primary-200">
         <div className="relative border-b border-primary-200 h-[145px] w-full overflow-hidden">
           <Image src={image} alt={title} fill className="object-cover" />
-          <div className="absolute top-5 right-5 flex gap-2">
-            {techs.map((tech) => (
-              <div key={tech} className="w-6 h-6 rounded-xs bg-primary">
+          {mainTech && (
+            <div className="absolute top-5 right-5">
+              <div
+                className="w-7 h-7 rounded-sm flex items-center justify-center"
+                style={{ backgroundColor: TECH_COLORS[mainTech] }}
+              >
                 <Icon
-                  icon={tech.toLowerCase()}
+                  icon={mainTech.toLowerCase()}
                   currentColor="var(--chart-2)"
                   className="w-5 h-5"
                 />
               </div>
-            ))}
-          </div>
+            </div>
+          )}
         </div>
         <div className="p-6 flex flex-col justify-between flex-grow">
           <p className="text-sm text-muted-foreground">{description}</p>
