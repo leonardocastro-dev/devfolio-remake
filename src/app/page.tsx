@@ -2,7 +2,7 @@ import SnakeGame from '@/components/layout/snake-game'
 
 export default function Home() {
   return (
-    <div className="flex flex-col justify-center items-center overflow-x-hidden px-8 h-full">
+    <div className="flex flex-col justify-center items-center overflow-hidden px-8 h-full">
       <div className="flex max-w-7xl w-full items-center justify-between flex-grow gap-8">
         <header className="flex flex-col justify-center">
           <p className="text-lg text-primary-foreground mb-2">

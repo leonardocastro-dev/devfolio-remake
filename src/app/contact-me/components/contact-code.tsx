@@ -28,7 +28,7 @@ export default function ContactCode() {
   }, [values])
 
   return (
-    <div className="pb-4 pt-30 px-9 overflow-y-auto custom-scrollbar max-h-full">
+    <div className="pb-4 pt-16 px-9 overflow-y-auto custom-scrollbar max-h-full xl:pt-30">
       <div className="h-[60000px]">
         <div
           className="about-block max-w-[630px] mx-auto"

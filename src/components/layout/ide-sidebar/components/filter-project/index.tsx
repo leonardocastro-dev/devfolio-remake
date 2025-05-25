@@ -22,17 +22,11 @@ export default function FilterProject() {
               />
               <span className="checkmark"></span>
             </div>
-            <div className="flex items-center gap-2.5 ml-6">
-              <Icon
-                icon={tech.toLowerCase()}
-                currentColor={selected ? 'white' : 'var(--muted-100)'}
-              />
-              <span
-                className={`text-sm ${selected ? 'text-white' : 'text-muted-foreground'}`}
-              >
-                {tech}
-              </span>
-            </div>
+            <span
+              className={`ml-4 text-sm ${selected ? 'text-white' : 'text-muted-foreground'}`}
+            >
+              {tech}
+            </span>
           </label>
         )
       })}
