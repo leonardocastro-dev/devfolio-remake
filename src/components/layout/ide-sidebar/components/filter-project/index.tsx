@@ -1,6 +1,5 @@
 'use client'
 
-import Icon from '@/components/ui/icon'
 import { useFilterStore } from './store'
 import { technologies } from './constants'
 
