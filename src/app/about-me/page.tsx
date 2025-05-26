@@ -23,7 +23,7 @@ export default function AboutMe() {
   const { tabs, selectedTab, removeTab, setSelectedTab, setTabs } =
     useTabsStore()
   const [activeSection, setActiveSection] =
-    useState<SidebarType>('personal-info')
+    useState<SidebarType>('professional-info')
   const currentSectionData = useMemo(
     () => getSectionData(activeSection),
     [activeSection]

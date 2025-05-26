@@ -1,20 +1,20 @@
 const sections = {
   // personal section
   intro: `/**
- * I’m a full stack developer who genuinely enjoys both sides of the stack —
+ * I'm a full stack developer who genuinely enjoys both sides of the stack —
  * from building clean, intuitive interfaces to crafting reliable, well-structured
  * APIs with Node.js.
  *
- * I’m all about turning ideas into real products that work, perform well,
+ * I'm all about turning ideas into real products that work, perform well,
  * and make sense to the people using them. Node.js is my comfort zone on the backend,
- * but I’m equally invested in frontend development when it comes to delivering
+ * but I'm equally invested in frontend development when it comes to delivering
  * great user experiences.
  *
  * I enjoy solving real-world problems, keeping things simple when possible,
  * and learning every day — especially about system architecture, cloud infrastructure,
  * and finding better ways to ship high-quality software, faster.
  *
- * If you’re into building solid products and enjoy good tech conversations,
+ * If you're into building solid products and enjoy good tech conversations,
  * feel free to reach out.
  */`,
   personality: `/**
@@ -42,6 +42,48 @@ const sections = {
  * I'm ready to take on significant responsibilities. I have attention to detail
  * and a genuine desire to make an impact wherever I am.
  */`,
+  ebac: `/**
+ *  EBAC - British School of Creative Arts and Technology
+ *  Full Stack Python Developer Course -- 2023/03 - 2024/12
+ *
+ *  Focused on modern web development, covering everything from
+ *  frontend with HTML, CSS, JavaScript, React.js, Vue.js, and Bootstrap,
+ *  to backend with Python, Django, FastAPI, and REST API integrations.
+ *  Emphasis on hands-on projects that simulate real-world scenarios,
+ *  including version control with Git/GitHub, automated testing,
+ *  and deployment using Docker.
+ *  A program designed to develop technical skills and prepare students
+ *  for real industry challenges.
+ */`,
+  harvard: `/**
+ *  Harvard University
+ *  CS50 - Introduction to Computer Science -- 2025/03 - Present
+ *
+ *  An entry-level but rigorous course that provides a comprehensive
+ *  foundation in computer science and programming principles.
+ *  Topics covered include algorithms, data structures, memory management,
+ *  abstraction, software engineering, and security.
+ *  Hands-on projects developed using languages like C, Python, SQL,
+ *  HTML, CSS, and JavaScript, with a strong focus on problem-solving
+ *  and computational thinking.
+ *  Designed to strengthen logic, algorithmic thinking, and core
+ *  software development fundamentals applicable to any technology stack.
+ */`,
+  fiap: `/**
+ *  FIAP - Paulista School of Informatics and Administration
+ *  Bachelor's Degree in Computer Engineering — 2024/08 - Paused
+ *
+ *  Comprehensive undergraduate program covering core areas of
+ *  computer engineering, including hardware, software, networks,
+ *  and systems design.
+ *  Curriculum includes programming, algorithms, data structures,
+ *  digital electronics, embedded systems, computer architecture,
+ *  and software engineering.
+ *  Emphasis on practical labs, projects, and internships to
+ *  prepare students for real-world engineering challenges.
+ *  Develops strong analytical, problem-solving, and technical skills
+ *  essential for a career in computing and technology innovation.
+ */`,
   // professional section
   simpleshub: `/**
  * Atibaia/Brazil -- 2024/10 - 2025/03 // On-site
@@ -55,7 +97,7 @@ const sections = {
  * responsive, and intuitive user experiences.
  *
  * Implemented data visualization using libraries like Vue Apex Charts, enhancing
- * the platform’s analytical capabilities with real-time and highly customizable charts.
+ * the platform's analytical capabilities with real-time and highly customizable charts.
  *
  * Promoted scalability and maintainability by designing modular, reusable components,
  * accelerating future development and reducing technical debt.
@@ -81,7 +123,7 @@ const sections = {
  * ensuring a robust and intuitive user experience.
  *
  * Worked remotely, collaborating with another Brazilian developer as an independent contractor,
- * with a flexible working hours to accommodate the project’s needs
+ * with a flexible working hours to accommodate the project's needs
  * and time zone differences.
  */`,
   mks: `/**
@@ -134,6 +176,38 @@ const sections = {
  * Adapted to a wide range of projects, from content management platforms
  * to custom web and mobile applications, ensuring high code quality,
  * maintainability, and client satisfaction.
+ */`,
+  frontend: `/**
+ * - React: Component-based JavaScript library for building user interfaces.
+ * - Next.js: React framework for server-side rendering (SSR), static site generation (SSG), and full-stack capabilities.
+ * - Vue.js: Progressive JavaScript framework for building flexible and reactive UIs.
+ * - Nuxt: Vue framework for server-side rendering (SSR), static site generation (SSG), and full-stack capabilities.
+ * - Astro: Modern static site builder that delivers fast websites by shipping less JavaScript.
+ * - Tailwind CSS: Utility-first CSS framework for rapidly building responsive designs.
+ * - SCSS Modules: CSS preprocessor with support for modular, scoped styling.
+ * - styled-components: CSS-in-JS library for styling React components within JavaScript files.
+ * - i18n: Internationalization libraries used to support multiple languages and locales.
+ * - React Query: Data-fetching and caching library for React, handling server state seamlessly.
+ * - Axios: Promise-based HTTP client for API requests from the frontend.
+ * - ReduxJS: Predictable state container for complex global state management in JavaScript apps.
+ * - ZustandJS: Lightweight state management library for React, offering a simpler API than Redux.
+ * - Pinia: State management library for Vue with a simpler and more intuitive API than Vuex.
+ */`,
+  backend: `/**
+ * - NestJS: Scalable Node.js framework with modular architecture and TypeScript support.
+ * - Express: Minimal and fast web framework for Node.js, widely used for HTTP servers.
+ * - PostgreSQL: Robust relational database with strong consistency and support for complex queries.
+ * - MongoDB: Flexible NoSQL database for document-oriented data.
+ * - Firebase: Backend-as-a-Service offering authentication, databases, storage, and serverless functions.
+ * - Redis: In-memory key-value store used for caching, rate limiting, and job queues.
+ * - Prisma: Type-safe ORM for Node.js and TypeScript with a modern developer experience.
+ * - TypeORM: ORM for SQL databases with TypeScript support and flexible patterns.
+ * - BullMQ: Redis-based job queue for handling background tasks like emails and payment processing.
+ * - Kafka: Distributed event streaming platform for scalable, event-driven architectures.
+ * - GraphQL: API query language that enables flexible data fetching.
+ * - REST (OpenAPI): Traditional HTTP APIs with structured contracts and documentation.
+ * - Docker: Containerization platform for packaging and deploying applications consistently.
+ * - OAuth2, JWT, Paseto: Protocols for authentication and secure API authorization.
  */`
 }
 

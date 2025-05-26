@@ -13,16 +13,8 @@ export const personalInfoFiles: SidebarItem[] = [
       {
         type: 'file',
         name: 'personality'
-      },
-      {
-        type: 'file',
-        name: 'background'
       }
     ]
-  },
-  {
-    type: 'file',
-    name: 'interests'
   },
   {
     type: 'folder',
@@ -31,11 +23,15 @@ export const personalInfoFiles: SidebarItem[] = [
     children: [
       {
         type: 'file',
+        name: 'ebac'
+      },
+      {
+        type: 'file',
         name: 'harvard'
       },
       {
         type: 'file',
-        name: 'ebac'
+        name: 'fiap'
       }
     ]
   }
@@ -77,10 +73,6 @@ export const professionalInfoFiles: SidebarItem[] = [
       {
         type: 'file',
         name: 'backend'
-      },
-      {
-        type: 'file',
-        name: 'languages'
       }
     ]
   }
