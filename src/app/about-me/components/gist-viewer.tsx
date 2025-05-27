@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import { highlightCode } from '@/lib/utils'
 import type { Gist } from '../types'
-import Image from 'next/image'
 
 export default function GistViewer() {
   const [gistFiles, setGistFiles] = useState<Gist[]>([])
@@ -59,14 +58,12 @@ export default function GistViewer() {
               <div key={gist.created_at}>
                 <div className="flex items-center mb-3">
                   <div className="w-9 h-9 rounded-full overflow-hidden mr-2.5">
-                    <Image
+                    <img
                       src={
                         gist.owner.avatar_url ||
                         'https://github.com/identicons/app/icon_hash.png'
                       }
                       alt={`${gist.owner.login || 'User'} avatar`}
-                      width={36}
-                      height={36}
                       className="w-full h-full object-cover"
                     />
                   </div>
