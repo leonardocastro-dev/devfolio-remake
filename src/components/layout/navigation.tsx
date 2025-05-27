@@ -25,7 +25,7 @@ export default function Navigation() {
 
       return () => clearTimeout(timer)
     }
-  }, [pathname, routes])
+  }, [pathname])
 
   const leftRoutes = routes.filter((r) => !r.isRight)
   const rightRoutes = routes.filter((r) => r.isRight)

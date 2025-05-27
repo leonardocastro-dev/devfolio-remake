@@ -25,7 +25,7 @@ export default function ContactCode() {
     }
 
     loadCode()
-  }, [values])
+  }, [values, date])
 
   return (
     <div className="pb-4 pt-16 px-9 scrollbar-section max-h-full 2xl:pt-30">
