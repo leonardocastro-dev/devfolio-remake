@@ -65,7 +65,7 @@ export default function ContactForm() {
 
   if (status === 'success') {
     return (
-      <div className="flex flex-col items-center py-4 px-9 justify-center overflow-y-auto border-r border-primary-200 custom-scrollbar max-h-full 2xl:pt-72 2xl:justify-start">
+      <div className="flex flex-col items-center py-4 px-9 justify-center border-r border-primary-200 scrollbar-section max-h-full 2xl:pt-72 2xl:justify-start">
         <h2 className="text-[26px] mb-2.5 font-bold text-primary">
           Thank you! 🤘
         </h2>
@@ -82,7 +82,7 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col items-center py-4 px-9 justify-center overflow-y-auto border-r border-primary-200 custom-scrollbar max-h-full 2xl:pt-30 2xl:justify-start"
+      className="flex flex-col items-center py-4 px-9 justify-center border-r border-primary-200 scrollbar-section max-h-full 2xl:pt-30 2xl:justify-start"
     >
       <div className="flex flex-col w-full max-w-[372px] gap-6">
         <div>

@@ -32,7 +32,7 @@ export default function Projects() {
   }
 
   return (
-    <main className="flex h-full">
+    <section className="flex h-full">
       <div className="flex max-w-xs w-full h-full">
         <IdeSidebar>
           <>
@@ -80,6 +80,6 @@ export default function Projects() {
         </nav>
         <ProjectList />
       </div>
-    </main>
+    </section>
   )
 }

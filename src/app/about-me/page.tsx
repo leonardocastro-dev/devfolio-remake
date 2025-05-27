@@ -30,7 +30,7 @@ export default function AboutMe() {
   )
 
   return (
-    <main className="flex h-full">
+    <section className="flex h-full">
       <div className="flex max-w-xs w-full h-full">
         <Sidebar
           activeSection={activeSection}
@@ -70,14 +70,14 @@ export default function AboutMe() {
           </>
         </IdeSidebar>
       </div>
-      <div className="w-full flex flex-col h-full">
+      <div className="w-full flex flex-col h-full min-w-0">
         <nav className="min-h-10 relative border-b border-primary-200">
           <Reorder.Group
             as="ul"
             axis="x"
             values={tabs}
             onReorder={setTabs}
-            className="flex"
+            className="flex scrollbar-tabs"
           >
             <AnimatePresence initial={false}>
               {tabs.map((tab) => (
@@ -97,6 +97,6 @@ export default function AboutMe() {
           <GistViewer />
         </div>
       </div>
-    </main>
+    </section>
   )
 }

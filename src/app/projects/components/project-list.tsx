@@ -25,7 +25,7 @@ export default function ProjectList() {
   }, [selectedTechs])
 
   return (
-    <div className="p-8 grid overflow-y-auto custom-scrollbar grid-cols-[repeat(auto-fill,_370px)] h-full gap-10 justify-center">
+    <div className="p-8 grid scrollbar-section grid-cols-[repeat(auto-fill,_370px)] h-full gap-10 justify-center">
       {filteredProjects.map((project) => (
         <ProjectCard key={project.id} {...project} />
       ))}

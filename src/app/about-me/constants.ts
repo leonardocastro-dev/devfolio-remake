@@ -80,23 +80,8 @@ export const professionalInfoFiles: SidebarItem[] = [
 
 export const hobbiesFiles: SidebarItem[] = [
   {
-    type: 'folder',
-    name: 'gaming',
-    color: 'var(--chart-4)',
-    children: [
-      {
-        type: 'file',
-        name: 'pc-games'
-      },
-      {
-        type: 'file',
-        name: 'board-games'
-      }
-    ]
-  },
-  {
     type: 'file',
-    name: 'cooking'
+    name: 'gaming'
   },
   {
     type: 'file',

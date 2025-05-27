@@ -44,7 +44,7 @@ export default function GistViewer() {
   }, [])
 
   return (
-    <div className="py-4 px-9 overflow-y-auto custom-scrollbar max-h-full">
+    <div className="py-4 px-9 scrollbar-section max-h-full">
       <div id="code-snippets" className="flex h-[60000px] flex-col">
         <span className="text-sm text-muted-foreground mb-14">
           {'// Code snippet showcase:'}

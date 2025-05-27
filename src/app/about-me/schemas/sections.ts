@@ -208,7 +208,45 @@ const sections = {
  * - REST (OpenAPI): Traditional HTTP APIs with structured contracts and documentation.
  * - Docker: Containerization platform for packaging and deploying applications consistently.
  * - OAuth2, JWT, Paseto: Protocols for authentication and secure API authorization.
- */`
+ */`,
+  // hobbies section
+  gaming: `/**
+ *  I've been passionate about games since childhood. The gaming universe
+ *  is not just a form of entertainment but also a constant source of inspiration,
+ *  logical thinking, and creativity.
+ *
+ *  I have a strong preference for RPGs, hack and slash, and metroidvania games.
+ *  Genres that combine exploration, character progression, strategic challenges,
+ *  and immersive storytelling have always captivated me.
+ *
+ *  Through gaming, I've developed skills like decision-making, problem-solving,
+ *  and persistence — all of which I also apply to my professional life.
+ *
+ *  Gaming has been part of my life since the early days of consoles,
+ *  remaining one of my main hobbies and lifelong passions.
+ */`,
+  traveling: `/**
+ *  I've always been passionate about traveling and the opportunity to explore
+ *  new cultures, places, and people. So far, my travels have been focused on
+ *  cities and states within Brazil, which has already provided me with
+ *  enriching and transformative experiences.
+ *
+ *  I believe that traveling is not just about learning a new language,
+ *  trying different foods, or experiencing local customs, but about understanding
+ *  that each place carries an entire culture that shapes how people think, live,
+ *  and see the world — from the way they're born to how they connect,
+ *  communicate, and build their lives.
+ *
+ *  My biggest dream is to live traveling the world, precisely to avoid having
+ *  a mindset limited to a single reality. I want to connect with different ways
+ *  of living and thinking, expanding my worldview.
+ *
+ *  I have a special desire to take a cruise to visit various destinations,
+ *  and also to explore countries I've always dreamed of, such as Greece, France,
+ *  Switzerland, Japan, and many others. The pursuit of new cultural, gastronomic,
+ *  and historical experiences makes traveling one of my greatest passions and one
+ *  of the main goals in my life.
+ */`,
 }
 
 export default sections

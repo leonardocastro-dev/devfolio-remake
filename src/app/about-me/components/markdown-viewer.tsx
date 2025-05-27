@@ -33,7 +33,7 @@ export default function MarkdownViewer({
   }, [selectedTab])
 
   return (
-    <div className="py-4 px-9 overflow-y-auto custom-scrollbar max-h-full">
+    <div className="py-4 px-9 scrollbar-section max-h-full">
       <div id="bio" className="h-[60000px]">
         <div
           className="about-block"
