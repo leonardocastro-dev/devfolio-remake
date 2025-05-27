@@ -246,7 +246,7 @@ const sections = {
  *  Switzerland, Japan, and many others. The pursuit of new cultural, gastronomic,
  *  and historical experiences makes traveling one of my greatest passions and one
  *  of the main goals in my life.
- */`,
+ */`
 }
 
 export default sections

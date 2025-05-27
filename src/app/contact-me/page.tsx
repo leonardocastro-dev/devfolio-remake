@@ -28,8 +28,7 @@ export default function ContactMe() {
         </IdeSidebar>
       </div>
       <div className="w-full flex flex-col h-full">
-        <nav className="overflow-hidden min-h-10 relative border-b border-primary-200">
-        </nav>
+        <nav className="overflow-hidden min-h-10 relative border-b border-primary-200"></nav>
         <div className="grid grid-cols-2 h-full overflow-hidden">
           <ContactForm />
           <ContactCode />
