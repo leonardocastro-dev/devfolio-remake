@@ -87,7 +87,7 @@ const sections = {
   // professional section
   simpleshub: `/**
  * Atibaia/Brazil -- 2024/10 - 2025/03 // On-site
- * Mid-Senior - Full-Stack Engineer
+ * Mid-Level - Full-Stack Engineer
  *
  * Contributed to the development of a software platform designed to support
  * accountants by integrating OpenAI technologies for advanced data processing
@@ -107,7 +107,7 @@ const sections = {
  */`,
   houzewerks: `/**
  * Rotonda/Florida -- 2024/06 - 2025/10 // Remote
- * Mid-Senior - Full-Stack Engineer
+ * Mid-Level - Full-Stack Engineer
  *
  * Developed a website to connect service providers with property owners,
  * similar to GetNinjas, using Payload for the backend and modern technologies
