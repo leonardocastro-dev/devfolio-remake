@@ -49,7 +49,7 @@ export default function Projects() {
                 </span>
                 <span className="flex items-center gap-2">
                   <Icon icon="phone" currentColor="var(--muted-100)" />
-                  <p className="text-muted-foreground">+5511992474559</p>
+                  <p className="text-muted-foreground">+5511988024732</p>
                 </span>
               </div>
             </SidebarSection>

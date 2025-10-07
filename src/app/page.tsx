@@ -1,17 +1,26 @@
 import SnakeGame from '@/components/layout/snake-game'
+import TextType from '@/components/ui/text-type'
 
 export default function Home() {
   return (
-    <main className="flex flex-col justify-center items-center overflow-hidden px-8 h-full">
-      <div className="flex max-w-7xl w-full items-center justify-between flex-grow gap-8">
-        <header className="flex flex-col justify-center">
-          <p className="text-lg text-primary-foreground mb-2">
-            Hello everyone. I am
-          </p>
-          <h1 className="font-retina text-6xl mb-4 -ml-1.5">Leonardo Castro</h1>
-          <p className="text-chart-1 text-3xl">&gt; Full-stack developer</p>
+    <section className="flex flex-col pt-24 pb-20 lg:py-0 justify-center items-center overflow-hidden px-8 h-full">
+      <div className="flex max-w-7xl w-full items-center lg:justify-between justify-center flex-grow gap-8">
+        <header className="flex flex-col justify-between lg:justify-center">
+          <div>
+            <p className="text-lg text-primary-foreground mb-2">
+              Hello everyone. I am
+            </p>
+            <TextType
+              text="Leonardo Castro"
+              typingSpeed={75}
+              className="font-retina text-6xl mb-4 -ml-1.5"
+              as="h1"
+              cursorCharacter="_"
+            />
+            <p className="text-chart-1 text-xl lg:text-3xl">&gt; Full-stack developer</p>
+          </div>
 
-          <div className="space-y-2 mt-20">
+          <div className="space-y-2 lg:mt-20">
             <p className="text-muted-foreground">
               {'// complete the game to continue'}
             </p>
@@ -38,6 +47,6 @@ export default function Home() {
         </header>
         <SnakeGame />
       </div>
-    </main>
+    </section>
   )
 }

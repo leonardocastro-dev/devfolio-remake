@@ -11,7 +11,7 @@ export default function SnakeGame() {
   const { foodCollected, ...gameStateForBoard } = gameState
 
   return (
-    <section className="relative">
+    <section className="relative hidden lg:block">
       <div className="blur-effect-1">
         <svg
           className="w-full h-full"
