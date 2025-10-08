@@ -22,7 +22,9 @@ export default function Home() {
               as="h1"
               cursorCharacter="_"
             />
-            <p className="lg:text-chart-1 text-chart-2 text-xl lg:text-3xl">&gt; Full-stack developer</p>
+            <p className="lg:text-chart-1 text-chart-2 text-xl lg:text-3xl">
+              &gt; Full-stack developer
+            </p>
           </div>
 
           <div className="lg:space-y-2 space-y-4 lg:mt-20">
@@ -30,7 +32,9 @@ export default function Home() {
               // complete the game to continue
             </p>
             <p className="text-muted-foreground">
-              {isMobile ? '// find my profile on Github:' : '// you can also see it on my Github page'}
+              {isMobile
+                ? '// find my profile on Github:'
+                : '// you can also see it on my Github page'}
             </p>
             <p className="font-medium">
               <span className="text-chart-1">const</span>{' '}

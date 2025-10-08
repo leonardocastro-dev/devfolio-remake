@@ -304,7 +304,7 @@ body {
   position: relative;
   transform: scale(var(--icon-size));
   transform-origin: center;
-  transition: transform .3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   cursor: pointer;
 }
 
@@ -319,16 +319,22 @@ body {
   opacity: 1;
   left: 0;
   transform: rotate(0deg);
-  transition: .25s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 
 /* ============================= */
 /* ===== Icon 1 ================ */
 /* ============================= */
 
-.nav-burguer span:nth-child(1) { top: 0; }
-.nav-burguer span:nth-child(2) { top: 7px; }
-.nav-burguer span:nth-child(3) { top: 14px; }
+.nav-burguer span:nth-child(1) {
+  top: 0;
+}
+.nav-burguer span:nth-child(2) {
+  top: 7px;
+}
+.nav-burguer span:nth-child(3) {
+  top: 14px;
+}
 
 .nav-burguer.open span:nth-child(1) {
   top: 7px;

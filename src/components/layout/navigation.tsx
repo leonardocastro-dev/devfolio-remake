@@ -93,7 +93,7 @@ export default function Navigation() {
       </div>
       <div
         className={clsx('nav-burguer lg:hidden', {
-          'open': isMenuOpen
+          open: isMenuOpen
         })}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
