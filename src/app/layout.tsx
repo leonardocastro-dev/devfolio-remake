@@ -22,9 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${firaCode.variable} antialiased flex flex-col`}
-      >
+      <body className={`${firaCode.variable} antialiased flex flex-col`}>
         <Navigation />
         <TooltipProvider>
           <main className="flex-1 overflow-hidden">{children}</main>
