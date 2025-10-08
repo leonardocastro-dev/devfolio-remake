@@ -1,7 +1,6 @@
 import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 import { createHighlighter, Highlighter } from 'shiki'
-import { useMediaQuery } from 'react-responsive'
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))

@@ -29,7 +29,7 @@ export default function Home() {
 
           <div className="lg:space-y-2 space-y-4 lg:mt-20">
             <p className="lg:block hidden text-muted-foreground">
-              // complete the game to continue
+              {'// complete the game to continue'}
             </p>
             <p className="text-muted-foreground">
               {isMobile
