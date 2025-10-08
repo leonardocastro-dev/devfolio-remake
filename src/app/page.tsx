@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <section className="flex flex-col pt-24 pb-20 lg:py-0 justify-center items-center overflow-hidden px-8 h-full">
       <div className="flex max-w-7xl w-full items-center lg:justify-between justify-center flex-grow gap-8">
-        <header className="flex flex-col justify-between lg:justify-center">
+        <header className="flex flex-col h-full justify-between lg:justify-center">
           <div>
             <p className="text-lg text-primary-foreground mb-2">
               Hello everyone. I am
@@ -17,11 +17,11 @@ export default function Home() {
               as="h1"
               cursorCharacter="_"
             />
-            <p className="text-chart-1 text-xl lg:text-3xl">&gt; Full-stack developer</p>
+            <p className="lg:text-chart-1 text-chart-2 text-xl lg:text-3xl">&gt; Full-stack developer</p>
           </div>
 
-          <div className="space-y-2 lg:mt-20">
-            <p className="text-muted-foreground">
+          <div className="lg:space-y-2 space-y-4 lg:mt-20">
+            <p className="lg:block hidden text-muted-foreground">
               {'// complete the game to continue'}
             </p>
             <p className="text-muted-foreground">

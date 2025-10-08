@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useLayoutEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
+import { clsx } from 'clsx'
 import { routes } from '@/routes'
 
 export default function Navigation() {
@@ -11,6 +12,7 @@ export default function Navigation() {
   const [activeIndex, setActiveIndex] = useState(0)
   const linkRefs = useRef<(HTMLElement | null)[]>([])
   const [ready, setReady] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useLayoutEffect(() => {
     const allReady = linkRefs.current.every((ref) => ref !== null)
@@ -31,12 +33,12 @@ export default function Navigation() {
   const rightRoutes = routes.filter((r) => r.isRight)
 
   return (
-    <nav className="flex border-b border-primary-200">
-      <span className="max-w-xs w-full border-r border-primary-200 flex items-center text-muted-foreground px-6 py-4">
+    <nav className="flex p-4 lg:p-0 justify-between items-center lg:justify-start border-b border-primary-200">
+      <span className="max-w-xs border-primary-200 flex items-center text-muted-foreground lg:px-6 lg:py-4 lg:w-full lg:border-r">
         leonardo-castro
       </span>
 
-      <div className="flex flex-grow relative justify-between w-full">
+      <div className="hidden flex-grow relative justify-between w-full lg:flex">
         <ul className="flex">
           {leftRoutes.map((route, index) => (
             <li
@@ -88,6 +90,16 @@ export default function Navigation() {
             }}
           />
         )}
+      </div>
+      <div
+        className={clsx('nav-burguer lg:hidden', {
+          'open': isMenuOpen
+        })}
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </nav>
   )
