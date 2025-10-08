@@ -27,7 +27,7 @@ export default function RootLayout({
       >
         <Navigation />
         <TooltipProvider>
-          <main>{children}</main>
+          <main className="flex-1 overflow-hidden">{children}</main>
         </TooltipProvider>
         <Footer />
       </body>
