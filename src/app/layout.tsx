@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${firaCode.variable} antialiased h-screen flex flex-col`}
+        className={`${firaCode.variable} antialiased flex flex-col`}
       >
         <Navigation />
         <TooltipProvider>

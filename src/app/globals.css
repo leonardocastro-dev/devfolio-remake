@@ -1,15 +1,9 @@
 @import 'tailwindcss';
 
 body {
+  min-height: 100dvh;
   background-color: var(--color-primary-400);
   font-family: var(--font-fira-code);
-}
-
-main {
-  height: 100vh;
-  height: 100dvh;
-  flex: 1;
-  overflow: hidden;
 }
 
 .scrollbar-section {
