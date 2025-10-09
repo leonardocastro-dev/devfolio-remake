@@ -2,7 +2,7 @@
 
 body {
   height: 100vh;
-  min-height: 100dvh;
+  height: 100dvh;
   background-color: var(--color-primary-400);
   font-family: var(--font-fira-code);
 }
