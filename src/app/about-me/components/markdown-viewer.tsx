@@ -40,7 +40,7 @@ export default function MarkdownViewer({
 
   return (
     <div
-      className={clsx('lg:pt-4 pt-9 pb-4 lg:px-9 px-7 max-h-full', {
+      className={clsx('lg:pt-4 pt-9 pb-5 lg:px-9 px-7 max-h-full', {
         'scrollbar-section': !isMobile
       })}
     >
