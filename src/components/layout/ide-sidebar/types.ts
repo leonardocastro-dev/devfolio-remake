@@ -32,4 +32,5 @@ export interface SidebarSectionProps {
   isOpen?: boolean
   isLast?: boolean
   children: React.ReactNode
+  onToggle?: () => void
 }

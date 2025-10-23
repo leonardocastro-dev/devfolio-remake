@@ -10,7 +10,8 @@ export default function SidebarSection({
   label,
   isOpen: initialIsOpen = true,
   isLast = false,
-  children
+  children,
+  onToggle
 }: SidebarSectionProps) {
   const [isOpen, setIsOpen] = useState(initialIsOpen)
   const [showSection, setShowSection] = useState(false)
@@ -23,11 +24,25 @@ export default function SidebarSection({
     return () => clearTimeout(timer)
   }, [])
 
+  useEffect(() => {
+    if (onToggle) {
+      setIsOpen(initialIsOpen)
+    }
+  }, [initialIsOpen, onToggle])
+
+  const handleToggle = () => {
+    if (onToggle) {
+      onToggle()
+    } else {
+      setIsOpen(!isOpen)
+    }
+  }
+
   return (
     <div>
       <div
-        className="flex items-center min-h-10 hover:bg-[#061B2D] px-3.5 cursor-pointer border-b border-primary-200"
-        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center min-h-10 lg:hover:bg-[#061B2D] bg-[#1E2D3D] lg:bg-transparent lg:px-3.5 px-7 cursor-pointer border-b border-primary-200"
+        onClick={handleToggle}
       >
         <span className="mr-3">
           <Icon
@@ -46,7 +61,7 @@ export default function SidebarSection({
             initial="closed"
             animate="open"
             exit="closed"
-            className={!isLast ? 'border-b border-primary-200' : ''}
+            className={!isLast ? 'lg:border-b border-primary-200' : ''}
           >
             {React.Children.map(children, (child, index) => (
               <motion.div key={index} variants={childVariant}>

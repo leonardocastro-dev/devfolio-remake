@@ -3,8 +3,11 @@
 import { useState, useEffect } from 'react'
 import { highlightCode } from '@/lib/utils'
 import type { Gist } from '../types'
+import { useIsMobile } from '@/app/hooks/useIsMobile'
+import { clsx } from 'clsx'
 
 export default function GistViewer() {
+  const isMobile = useIsMobile()
   const [gistFiles, setGistFiles] = useState<Gist[]>([])
   const [isLoading, setIsLoading] = useState(true)
 
@@ -44,9 +47,11 @@ export default function GistViewer() {
   }, [])
 
   return (
-    <div className="py-4 px-9 scrollbar-section max-h-full">
-      <div id="code-snippets" className="flex h-[60000px] flex-col">
-        <span className="text-sm text-muted-foreground mb-14">
+    <div className={clsx('lg:py-4 py-9 lg:px-9 px-7 max-h-full', {
+      'scrollbar-section': !isMobile
+    })}>
+      <div id="code-snippets" className="flex lg:h-[60000px] flex-col">
+        <span className="lg:text-sm lg:text-muted-foreground text-white mb-7 lg:mb-14">
           {'// Code snippet showcase:'}
         </span>
 

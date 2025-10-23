@@ -30,8 +30,9 @@ export const childVariant = {
   }
 }
 
-const BASE_PADDING = 14
 const LEVEL_PADDING = 25
 
-export const paddingLeft = (depth: number) =>
-  BASE_PADDING + depth * LEVEL_PADDING
+export const paddingLeft = (depth: number, isMobile: boolean) => {
+  const BASE_PADDING = isMobile ? 28 : 14
+  return BASE_PADDING + depth * LEVEL_PADDING
+}

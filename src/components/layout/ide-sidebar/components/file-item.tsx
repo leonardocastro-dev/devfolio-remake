@@ -6,8 +6,10 @@ import { useTabsStore } from '../../tabs/store'
 import { FileItemProps } from '../types'
 import { motion } from 'framer-motion'
 import { childVariant, paddingLeft } from '../constants'
+import { useIsMobile } from '@/app/hooks/useIsMobile'
 
 export default function FileItemComponent({ file, depth }: FileItemProps) {
+  const isMobile = useIsMobile()
   const { addTab, selectedTab } = useTabsStore()
 
   const handleFileClick = () => {
@@ -19,8 +21,8 @@ export default function FileItemComponent({ file, depth }: FileItemProps) {
   return (
     <motion.div
       variants={childVariant}
-      className="flex items-center hover:bg-[#061B2D] pr-3.5 py-2 cursor-pointer group"
-      style={{ paddingLeft: paddingLeft(depth) }}
+      className="flex items-center hover:bg-[#061B2D] lg:pr-3.5 pr-7 py-2 cursor-pointer group"
+      style={{ paddingLeft: paddingLeft(depth, isMobile) }}
       onClick={handleFileClick}
     >
       <span className="mr-2">

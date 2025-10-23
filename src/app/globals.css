@@ -127,6 +127,14 @@ body {
     float-blur-reverse 18s ease-in-out infinite;
 }
 
+@media (max-width: 1024px) {
+  .blur-effect-1 {
+  }
+
+  .blur-effect-2 {
+  }
+}
+
 .corner-screw {
   position: absolute;
   display: flex;
@@ -175,6 +183,12 @@ body {
 
 .nav-link:hover {
   color: var(--primary-foreground);
+}
+
+@media (max-width: 1024px) {
+  .nav-link {
+    padding: 18px;
+  }
 }
 
 .arrow-key {

@@ -6,19 +6,21 @@ import { FolderItemProps } from '../types'
 import { motion, AnimatePresence } from 'framer-motion'
 import { collapseVariants, paddingLeft } from '../constants'
 import SidebarExplorer from './sidebar-explorer'
+import { useIsMobile } from '@/app/hooks/useIsMobile'
 
 export default function FolderItemComponent({
   folder,
   depth
 }: FolderItemProps) {
+  const isMobile = useIsMobile()
   const [isOpen, setIsOpen] = useState(true)
 
   return (
     <div>
       <div
-        className="flex items-center hover:bg-[#061B2D] pr-3.5 py-2 cursor-pointer group"
+        className="flex items-center hover:bg-[#061B2D] lg:pr-3.5 pr-7 py-2 cursor-pointer group"
         onClick={() => setIsOpen(!isOpen)}
-        style={{ paddingLeft: paddingLeft(depth) }}
+        style={{ paddingLeft: paddingLeft(depth, isMobile) }}
       >
         <span className="mr-3">
           <Icon
