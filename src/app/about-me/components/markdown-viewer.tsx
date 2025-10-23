@@ -39,20 +39,22 @@ export default function MarkdownViewer({
   }, [selectedTab])
 
   return (
-    <div className={clsx('lg:pt-4 pt-9 pb-4 lg:px-9 px-7 max-h-full', {
-      'scrollbar-section': !isMobile
-    })}>
+    <div
+      className={clsx('lg:pt-4 pt-9 pb-4 lg:px-9 px-7 max-h-full', {
+        'scrollbar-section': !isMobile
+      })}
+    >
       <div id="bio" className="lg:h-[60000px]">
-        <h2 className='mb-4 lg:hidden'>
+        <h2 className="mb-4 lg:hidden">
           {filePath ? (
             <>
-              <span className='text-white'>{`// ${filePath.section}`}</span>
+              <span className="text-white">{`// ${filePath.section}`}</span>
               {filePath.folder && (
-                <span className='text-muted-100'> / ${filePath.folder}</span>
+                <span className="text-muted-100"> / ${filePath.folder}</span>
               )}
             </>
           ) : (
-            <span className='text-white'>{'// select a file'}</span>
+            <span className="text-white">{'// select a file'}</span>
           )}
         </h2>
         <div

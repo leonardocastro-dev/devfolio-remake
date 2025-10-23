@@ -17,7 +17,7 @@ import {
   TooltipTrigger
 } from '@/components/ui/tooltip'
 import { useState, useMemo } from 'react'
-import { getSectionData, getFilePath } from './utils'
+import { getSectionData } from './utils'
 import { useIsMobile } from '../hooks/useIsMobile'
 import { sidebarItems } from '@/components/layout/sidebar/constants'
 
@@ -37,7 +37,7 @@ export default function AboutMe() {
 
   return (
     <section className="flex flex-col lg:flex-row h-full lg:overflow-auto">
-      <h2 className='lg:hidden px-7 pb-7 pt-5 text-sm'>_about-me</h2>
+      <h2 className="lg:hidden px-7 pb-7 pt-5 text-sm">_about-me</h2>
       <div className="flex lg:max-w-xs w-full h-full">
         {!isMobile && (
           <Sidebar
@@ -49,16 +49,18 @@ export default function AboutMe() {
           <>
             {isMobile ? (
               <>
-                {sidebarItems.map((item, index) => {
+                {sidebarItems.map((item) => {
                   const sectionData = getSectionData(item.id)
                   return (
                     <SidebarSection
                       key={item.id}
                       label={sectionData.label}
                       isOpen={openMobileSection === item.id}
-                      onToggle={() => setOpenMobileSection(
-                        openMobileSection === item.id ? null : item.id
-                      )}
+                      onToggle={() =>
+                        setOpenMobileSection(
+                          openMobileSection === item.id ? null : item.id
+                        )
+                      }
                     >
                       {sectionData.files.map((file, i) => (
                         <SidebarExplorer
@@ -76,7 +78,10 @@ export default function AboutMe() {
                 label={currentSectionData.label}
               >
                 {currentSectionData.files.map((file, i) => (
-                  <SidebarExplorer key={`${activeSection}-${i}`} schema={file} />
+                  <SidebarExplorer
+                    key={`${activeSection}-${i}`}
+                    schema={file}
+                  />
                 ))}
               </SidebarSection>
             )}
@@ -84,9 +89,14 @@ export default function AboutMe() {
               label="contacts"
               isLast={true}
               isOpen={isMobile ? openMobileSection === 'contacts' : true}
-              onToggle={isMobile ? () => setOpenMobileSection(
-                openMobileSection === 'contacts' ? null : 'contacts'
-              ) : undefined}
+              onToggle={
+                isMobile
+                  ? () =>
+                      setOpenMobileSection(
+                        openMobileSection === 'contacts' ? null : 'contacts'
+                      )
+                  : undefined
+              }
             >
               <div className="flex flex-col gap-2.5 lg:px-3.5 px-7 pt-2.5 lg:pb-2.5">
                 <span className="flex items-center gap-2">

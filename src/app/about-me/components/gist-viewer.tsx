@@ -47,9 +47,11 @@ export default function GistViewer() {
   }, [])
 
   return (
-    <div className={clsx('lg:py-4 py-9 lg:px-9 px-7 max-h-full', {
-      'scrollbar-section': !isMobile
-    })}>
+    <div
+      className={clsx('lg:py-4 py-9 lg:px-9 px-7 max-h-full', {
+        'scrollbar-section': !isMobile
+      })}
+    >
       <div id="code-snippets" className="flex lg:h-[60000px] flex-col">
         <span className="lg:text-sm lg:text-muted-foreground text-white mb-7 lg:mb-14">
           {'// Code snippet showcase:'}

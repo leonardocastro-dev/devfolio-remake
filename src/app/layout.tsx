@@ -25,7 +25,9 @@ export default function RootLayout({
       <body className={`${firaCode.variable} antialiased flex flex-col`}>
         <Navigation />
         <TooltipProvider>
-          <main className="flex-1 lg:overflow-hidden pt-[61px] lg:pt-0">{children}</main>
+          <main className="flex-1 lg:overflow-hidden pt-[61px] lg:pt-0">
+            {children}
+          </main>
         </TooltipProvider>
         <Footer />
       </body>
