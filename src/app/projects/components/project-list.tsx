@@ -32,14 +32,28 @@ export default function ProjectList() {
     setFilteredProjects(filtered)
   }, [selectedTechs])
 
+  const handleClearFilters = () => {
+    useFilterStore.getState().clearFilters()
+  }
+
   return (
     <div className="lg:p-8 px-7 py-9 flex flex-col">
       {isMobile && filePath && (
-        <h2 className="mb-4 lg:hidden">
-          <span className="text-white">{`// ${filePath.section}`}</span>
-          {filePath.folder && (
-            <span className="text-muted-100"> / {filePath.folder}</span>
-          )}
+        <h2 className="mb-4 lg:hidden flex-wrap gap-2 flex items-center justify-between">
+          <span>
+            <span className="text-white">{`// ${filePath.section}`}</span>
+            {filePath.folder && (
+              <span className="text-muted-100"> / {filePath.folder}</span>
+            )}
+          </span>
+          <button
+            onClick={handleClearFilters}
+            className={`transition-colors ${
+              selectedTechs.length > 0 ? 'text-white' : 'text-muted-100'
+            }`}
+          >
+            _clear-filters
+          </button>
         </h2>
       )}
       <div className="flex flex-col lg:grid scrollbar-section grid-cols-[repeat(auto-fill,_370px)] h-full lg:gap-10 gap-5 justify-center">

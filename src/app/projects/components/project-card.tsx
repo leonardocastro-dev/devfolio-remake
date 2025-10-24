@@ -5,6 +5,7 @@ import Icon from '@/components/ui/icon'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { ProjectCardProps } from '../types'
+import { useIsMobile } from '@/app/hooks/useIsMobile'
 
 type MainTech = 'React' | 'Vue'
 
@@ -21,6 +22,7 @@ export default function ProjectCard({
   techs,
   link
 }: ProjectCardProps) {
+  const isMobile = useIsMobile()
   const mainTech = techs.find((tech) => tech === 'React' || tech === 'Vue') as
     | MainTech
     | undefined
@@ -29,7 +31,7 @@ export default function ProjectCard({
     <div className="flex lg:w-[370px] flex-col gap-3.5">
       <h3 className="text-muted-foreground">
         <span className="text-[#4D5BCE] font-bold">Project {id} </span>
-        {`// _${title}`}
+        {`${isMobile ? '/' : '//'} _${title}`}
       </h3>
       <div className="bg-primary-500 rounded-2xl flex flex-col lg:h-[315px] h-[328px] overflow-hidden border border-primary-200">
         <div className="relative border-b border-primary-200 h-[146px] w-full overflow-hidden">
