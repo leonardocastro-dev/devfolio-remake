@@ -36,7 +36,7 @@ export default function AboutMe() {
   const isMobile = useIsMobile()
 
   return (
-    <section className="flex flex-col lg:flex-row h-full lg:overflow-auto">
+    <section className="flex flex-col lg:flex-row h-full">
       <h2 className="lg:hidden px-7 pb-7 pt-5 text-sm">_about-me</h2>
       <div className="flex lg:max-w-xs w-full h-full">
         {!isMobile && (

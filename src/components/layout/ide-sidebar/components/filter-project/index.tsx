@@ -7,7 +7,7 @@ export default function FilterProject() {
   const { toggleTech, isSelected } = useFilterStore()
 
   return (
-    <div className="p-4 flex flex-col gap-4">
+    <div className="pt-4 lg:pb-4 px-7 lg:px-4 flex flex-col gap-4">
       {technologies.map(({ tech }) => {
         const selected = isSelected(tech)
         return (

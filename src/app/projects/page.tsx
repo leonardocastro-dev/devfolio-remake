@@ -10,8 +10,10 @@ import Icon from '@/components/ui/icon'
 import ProjectList from './components/project-list'
 import { useFilterStore } from '@/components/layout/ide-sidebar/components/filter-project/store'
 import { useEffect, useState } from 'react'
+import { useIsMobile } from '../hooks/useIsMobile'
 
 export default function Projects() {
+  const isMobile = useIsMobile()
   const { selectedTechs } = useFilterStore()
   const [filterTab, setFilterTab] = useState<Tab | null>(null)
 
@@ -32,32 +34,35 @@ export default function Projects() {
   }
 
   return (
-    <section className="flex h-full">
-      <div className="flex max-w-xs w-full h-full">
+    <section className="flex flex-col lg:flex-row h-full">
+      <h2 className="lg:hidden px-7 pb-7 pt-5 text-sm">_projects</h2>
+      <div className="flex lg:max-w-xs w-full h-full">
         <IdeSidebar>
           <>
             <SidebarSection label="projects">
               <FilterProject />
             </SidebarSection>
-            <SidebarSection label="contacts" isLast={true}>
-              <div className="flex flex-col gap-2.5 px-3.5 py-2.5">
-                <span className="flex items-center gap-2">
-                  <Icon icon="mail" currentColor="var(--muted-100)" />
-                  <p className="text-muted-foreground">
-                    leonardocastro-dev@pm.me
-                  </p>
-                </span>
-                <span className="flex items-center gap-2">
-                  <Icon icon="phone" currentColor="var(--muted-100)" />
-                  <p className="text-muted-foreground">+5511988024732</p>
-                </span>
-              </div>
-            </SidebarSection>
+            {!isMobile && (
+              <SidebarSection label="contacts" isLast={true}>
+                <div className="flex flex-col gap-2.5 px-3.5 py-2.5">
+                  <span className="flex items-center gap-2">
+                    <Icon icon="mail" currentColor="var(--muted-100)" />
+                    <p className="text-muted-foreground">
+                      leonardocastro-dev@pm.me
+                    </p>
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <Icon icon="phone" currentColor="var(--muted-100)" />
+                    <p className="text-muted-foreground">+5511988024732</p>
+                  </span>
+                </div>
+              </SidebarSection>
+            )}
           </>
         </IdeSidebar>
       </div>
       <div className="w-full flex flex-col h-full">
-        <nav className="min-h-10 relative border-b border-primary-200">
+        <nav className="hidden lg:block min-h-10 relative border-b border-primary-200">
           <Reorder.Group
             as="ul"
             axis="x"

@@ -5,7 +5,7 @@ import { highlightCode } from '@/lib/utils'
 import sections from '../schemas/sections'
 import { useIsMobile } from '@/app/hooks/useIsMobile'
 import { clsx } from 'clsx'
-import { getFilePath } from '../utils'
+import { getFilePath } from '@/lib/utils'
 
 export default function MarkdownViewer({
   selectedTab
@@ -15,7 +15,10 @@ export default function MarkdownViewer({
   const isMobile = useIsMobile()
   const [codeMd, setCodeMd] = useState('')
 
-  const filePath = useMemo(() => getFilePath(selectedTab), [selectedTab])
+  const filePath = useMemo(
+    () => getFilePath({ type: 'about-me', tabId: selectedTab }),
+    [selectedTab]
+  )
 
   useEffect(() => {
     const loadCode = async () => {
@@ -50,7 +53,7 @@ export default function MarkdownViewer({
             <>
               <span className="text-white">{`// ${filePath.section}`}</span>
               {filePath.folder && (
-                <span className="text-muted-100"> / ${filePath.folder}</span>
+                <span className="text-muted-100"> / {filePath.folder}</span>
               )}
             </>
           ) : (

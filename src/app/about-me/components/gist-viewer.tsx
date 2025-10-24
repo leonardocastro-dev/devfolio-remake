@@ -82,7 +82,7 @@ export default function GistViewer() {
                   </div>
                 </div>
 
-                <div className="space-y-7">
+                <div className="lg:space-y-7 space-y-5">
                   {Object.values(gist.files).map((file) => (
                     <div
                       key={file.filename}

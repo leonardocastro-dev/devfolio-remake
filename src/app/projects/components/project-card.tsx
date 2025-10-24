@@ -26,13 +26,13 @@ export default function ProjectCard({
     | undefined
 
   return (
-    <div className="flex w-[370px] flex-col gap-3.5">
+    <div className="flex lg:w-[370px] flex-col gap-3.5">
       <h3 className="text-muted-foreground">
         <span className="text-[#4D5BCE] font-bold">Project {id} </span>
         {`// _${title}`}
       </h3>
-      <div className="bg-primary-500 rounded-2xl flex flex-col h-[315px] overflow-hidden border border-primary-200">
-        <div className="relative border-b border-primary-200 h-[145px] w-full overflow-hidden">
+      <div className="bg-primary-500 rounded-2xl flex flex-col lg:h-[315px] h-[328px] overflow-hidden border border-primary-200">
+        <div className="relative border-b border-primary-200 h-[146px] w-full overflow-hidden">
           <Image src={image} alt={title} fill className="object-cover" />
           {mainTech && (
             <div className="absolute top-5 right-5">
