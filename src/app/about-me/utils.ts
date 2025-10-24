@@ -3,7 +3,6 @@ import {
   personalInfoFiles,
   professionalInfoFiles
 } from './constants'
-import { sidebarItems } from '@/components/layout/sidebar/constants'
 
 export function getSectionData(activeSection: string) {
   switch (activeSection) {
