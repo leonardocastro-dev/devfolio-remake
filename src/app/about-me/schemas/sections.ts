@@ -85,8 +85,12 @@ const sections = {
  *  essential for a career in computing and technology innovation.
  */`,
   // professional section
+  grouplinkone: `/**
+ * São Paulo/Brazil -- 2025/06 - Present // Hybrid
+ * Mid-Level - Full-Stack Engineer
+ */`,
   simpleshub: `/**
- * Atibaia/Brazil -- 2024/10 - 2025/03 // On-site
+ * Atibaia/Brazil -- 2024/10 - 2025/05 // On-site
  * Mid-Level - Full-Stack Engineer
  *
  * Contributed to the development of a software platform designed to support
@@ -106,7 +110,7 @@ const sections = {
  * with cross-functional teams to meet deadlines and deliver high-quality solutions.
  */`,
   houzewerks: `/**
- * Rotonda/Florida -- 2024/06 - 2025/10 // Remote
+ * Rotonda/Florida -- 2024/06 - 2025/12 // Remote
  * Mid-Level - Full-Stack Engineer
  *
  * Developed a website to connect service providers with property owners,
@@ -127,7 +131,7 @@ const sections = {
  * and time zone differences.
  */`,
   mks: `/**
- * Barueri/Brazil -- 2024/04 - 2024/06 // On-site
+ * Barueri/Brazil -- 2024/04 - 2024/07 // On-site
  * Junior - Front-End Engineer
  *
  * Developed user interfaces for online casinos using Vite, later migrating
