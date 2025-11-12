@@ -27,5 +27,5 @@ jobs:
             git reset --hard origin/main
             pnpm install --frozen-lockfile
             pnpm build
-            pm2 restart devfolio
+            pm2 restart devfolio-remake
             echo "✅ Deployment completed successfully."
