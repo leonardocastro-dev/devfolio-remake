@@ -17,7 +17,7 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
             set -e
-            cd /home/usuario/devfolio
+            cd /root/projects/devfolio
             git fetch origin main
             git reset --hard origin/main
             pnpm install --frozen-lockfile
