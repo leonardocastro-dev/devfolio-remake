@@ -17,9 +17,16 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
             set -e
+            mkdir -p ~/.ssh
+            grep -q github.com ~/.ssh/known_hosts || ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+
+            export PNPM_HOME="/root/.local/share/pnpm"
+            export PATH="$PNPM_HOME:$PATH"
+
             cd /root/projects/devfolio-remake
             git fetch origin main
             git reset --hard origin/main
             pnpm install --frozen-lockfile
             pnpm build
             pm2 restart devfolio
+            echo "✅ Deployment completed successfully."
