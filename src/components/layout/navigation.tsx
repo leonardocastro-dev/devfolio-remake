@@ -1,15 +1,14 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import { useLayoutEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { clsx } from 'clsx'
-import { routes, getBasePath } from '@/routes'
+import { routes } from '@/routes'
+import { usePathname } from 'next/navigation'
 
 export default function Navigation() {
   const pathname = usePathname()
-  const basePath = getBasePath()
   const [activeIndex, setActiveIndex] = useState(0)
   const linkRefs = useRef<(HTMLElement | null)[]>([])
   const [ready, setReady] = useState(false)
@@ -17,7 +16,7 @@ export default function Navigation() {
 
   useLayoutEffect(() => {
     const allReady = linkRefs.current.every((ref) => ref !== null)
-    const index = routes.findIndex((route) => `${basePath}${route.path}` === pathname)
+    const index = routes.findIndex((route) => route.path === pathname)
 
     if (allReady && index !== -1) {
       setActiveIndex(index)
@@ -28,7 +27,7 @@ export default function Navigation() {
 
       return () => clearTimeout(timer)
     }
-  }, [pathname, basePath])
+  }, [pathname])
 
   const leftRoutes = routes.filter((r) => !r.isRight)
   const rightRoutes = routes.filter((r) => r.isRight)
@@ -51,7 +50,7 @@ export default function Navigation() {
               >
                 <Link
                   href={route.path}
-                  className={`nav-link ${`${basePath}${route.path}` === pathname ? 'text-primary-foreground!' : ''}`}
+                  className={`nav-link ${pathname === route.path ? 'text-primary-foreground!' : ''}`}
                 >
                   {route.label}
                 </Link>
@@ -66,7 +65,7 @@ export default function Navigation() {
                 <Link
                   key={route.path}
                   href={route.path}
-                  className={`nav-link border-l border-r-0! ${`${basePath}${route.path}` === pathname ? 'text-primary-foreground!' : ''}`}
+                  className={`nav-link border-l border-r-0! ${pathname === route.path ? 'text-primary-foreground!' : ''}`}
                   ref={(el) => {
                     linkRefs.current[refIndex] = el
                   }}
@@ -123,7 +122,7 @@ export default function Navigation() {
                   <Link
                     key={route.path}
                     href={route.path}
-                    className={`nav-link border-b ${`${basePath}${route.path}` === pathname ? 'text-primary-foreground!' : ''}`}
+                    className={`nav-link border-b ${pathname === route.path ? 'text-primary-foreground!' : ''}`}
                     onClick={() => setIsMenuOpen(false)}
                     ref={(el) => {
                       linkRefs.current[index] = el

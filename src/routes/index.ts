@@ -4,5 +4,3 @@ export const routes = [
   { path: '/projects', label: '_projects' },
   { path: '/contact-me', label: '_contact-me', isRight: true }
 ]
-
-export const getBasePath = () => process.env.NODE_ENV === 'production' ? '/devfolio' : ''
