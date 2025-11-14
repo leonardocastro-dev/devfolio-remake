@@ -37,7 +37,7 @@ export default function ProjectList() {
   }
 
   return (
-    <div className="lg:p-8 px-7 py-9 flex flex-col">
+    <div className="lg:p-8 px-7 py-9 flex flex-col h-full scrollbar-section">
       {isMobile && filePath && (
         <h2 className="mb-4 lg:hidden flex-wrap gap-2 flex items-center justify-between">
           <span>
@@ -56,7 +56,7 @@ export default function ProjectList() {
           </button>
         </h2>
       )}
-      <div className="flex flex-col lg:grid scrollbar-section grid-cols-[repeat(auto-fill,_370px)] h-full lg:gap-10 gap-5 justify-center">
+      <div className="flex flex-col lg:grid grid-cols-[repeat(auto-fill,_370px)] gap-5 lg:gap-10 justify-center">
         {filteredProjects.map((project) => (
           <ProjectCard key={project.id} {...project} />
         ))}
