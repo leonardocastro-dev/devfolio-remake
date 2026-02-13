@@ -134,28 +134,17 @@ const sections = {
  * Barueri/Brazil -- 2024/04 - 2024/07 // On-site
  * Junior - Front-End Engineer
  *
- * Developed user interfaces for online casinos using Vite, later migrating
- * to Next.js to enable a more efficient workflow and better integration
- * with React.
+ * Contributed to migrating the betting platform from Vite → Next.js
+ * by applying SSR and CSR strategies to optimize rendering and data loading,
+ * improving template performance by 70% for a system serving over 50M concurrent users.
  *
- * Initially worked with styled-components, then transitioned to SCSS Modules
- * to improve code scalability and maintainability.
+ * Developed an original mini-game from the ground up for a specific client who requested a
+ * custom experience inside our betting platform template, focusing on creating a unique
+ * high-impact feature with UI, animations, responsiveness, and full ecosystem integration.
  *
- * Integrated React Query, Axios, and Redux for optimized API communication,
- * state management, and data fetching, resulting in better performance and
- * frontend data handling.
- *
- * Implemented i18n for multi-language support, delivering a localized
- * and personalized experience for users across different regions.
- *
- * Collaborated on the creation and continuous improvement of a casino template,
- * adapting it to client requirements and updating it based on evolving project needs.
- *
- * Worked in a hybrid model (3 days on-site, 2 days remote) as an independent contractor,
- * following a standard 8-hour workday.
- *
- * Operated under the guidance of the Tech Lead, focusing on efficient task
- * execution and providing ongoing support for project improvements.
+ * Enhanced the structure and scalability of the betting platform by transitioning from
+ * styled-components to SCSS Modules, improving code organization, reducing runtime overhead,
+ * and enabling faster maintenance across multiple templates and client deployments.
  */`,
   freelance: `/**
  * Remote -- 2021/01 - Present
