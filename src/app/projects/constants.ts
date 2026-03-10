@@ -12,12 +12,12 @@ export const projectsData: ProjectCardProps[] = [
   },
   {
     id: 2,
-    title: 'todo-list',
+    title: 'fokuz',
     description:
       'App to manage and organize daily tasks efficiently and effortlessly.',
-    image: '/todo-list.png',
+    image: '/fokuz.png',
     techs: ['Vue', 'Tailwindcss', 'Nuxt', 'Firebase'],
-    link: 'https://todo-list-rho-sandy.vercel.app/'
+    link: 'https://fokuz.leocastro.me/'
   },
   {
     id: 3,
